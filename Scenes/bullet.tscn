@@ -1,22 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfy5i1lnttjdq"]
+[gd_scene load_steps=5 format=3 uid="uid://cfy5i1lnttjdq"]
 
-[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_w6nuk"]
-[ext_resource type="Texture2D" uid="uid://bt1ama2mr4i7n" path="res://Assets/Sprites/Trash.png" id="2_ar0yg"]
+[ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_s3v7w"]
+[ext_resource type="Texture2D" uid="uid://fqa25fsk4nd" path="res://Assets/Sprites/bullet.png" id="2_ygyog"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_717mf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shg4x"]
+size = Vector2(10, 6)
 
-[node name="bullet" type="CharacterBody2D"]
-collision_layer = 16
-script = ExtResource("1_w6nuk")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n313n"]
+size = Vector2(16, 10)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_717mf")
+[node name="Bullet" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 256
+script = ExtResource("1_s3v7w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ar0yg")
+rotation = 1.5708
+texture = ExtResource("2_ygyog")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_shg4x")
+
+[node name="Front" type="Marker2D" parent="."]
+position = Vector2(8, 0)
+
+[node name="Back" type="Marker2D" parent="."]
+position = Vector2(-8, 0)
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("RectangleShape2D_n313n")
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

@@ -36,7 +36,6 @@ func getCoordinates():
 func _on_player_enter_body_entered(_body):
 	garage_interior.y_sort_enabled = false
 	SignalBus.hideTrailer.emit(true)
-	print_debug("entering")
 
 
 func _on_player_enter_body_exited(_body):

@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://djhe8reawejrw"]
+[gd_scene load_steps=21 format=3 uid="uid://djhe8reawejrw"]
 
 [ext_resource type="Script" path="res://Scripts/LawnMower.gd" id="1_mp85h"]
 [ext_resource type="Texture2D" uid="uid://cjwg3wuav2g0j" path="res://Assets/Sprites/DecentTractor.png" id="2_0food"]
 [ext_resource type="Texture2D" uid="uid://bcurusn1bx3p1" path="res://Assets/Sprites/SuperTractor.png" id="2_ykqw0"]
 [ext_resource type="AudioStream" uid="uid://cj0vtmqq71ar3" path="res://Assets/Audio/EngineSound.ogg" id="3_lv11k"]
+[ext_resource type="Texture2D" uid="uid://dtwgvikk7wmcw" path="res://Assets/Sprites/SuperTractorGun.png" id="3_yhcb7"]
+[ext_resource type="Texture2D" uid="uid://d0ql660bqv6ev" path="res://Assets/Sprites/GunDecentTractor1.png" id="5_k2vua"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjp0w"]
 atlas = ExtResource("2_ykqw0")
@@ -13,12 +15,28 @@ region = Rect2(0, 0, 24, 41)
 atlas = ExtResource("2_ykqw0")
 region = Rect2(24, 0, 24, 41)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj1ig"]
+atlas = ExtResource("3_yhcb7")
+region = Rect2(0, 0, 28, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnupn"]
+atlas = ExtResource("3_yhcb7")
+region = Rect2(28, 0, 28, 42)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qh2dx"]
 atlas = ExtResource("2_0food")
 region = Rect2(0, 0, 22, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8elr"]
 atlas = ExtResource("2_0food")
+region = Rect2(22, 0, 22, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qny0g"]
+atlas = ExtResource("5_k2vua")
+region = Rect2(0, 0, 22, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfwcm"]
+atlas = ExtResource("5_k2vua")
 region = Rect2(22, 0, 22, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8mkxv"]
@@ -36,6 +54,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_oj1ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnupn")
+}],
+"loop": true,
+"name": &"SuperTractorGun",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qh2dx")
 }, {
 "duration": 1.0,
@@ -43,6 +72,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"decentTractor",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qny0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfwcm")
+}],
+"loop": true,
+"name": &"decentTractorGun",
 "speed": 12.0
 }]
 
@@ -68,8 +108,9 @@ script = ExtResource("1_mp85h")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_8mkxv")
-animation = &"SuperTractor"
+animation = &"SuperTractorGun"
 autoplay = "decentTractor"
+frame_progress = 0.682103
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jif76")
@@ -117,6 +158,18 @@ collision_mask = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradesHitbox"]
 shape = SubResource("CircleShape2D_2tl5e")
 
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="ShootMarkerLeft" type="Marker2D" parent="."]
+position = Vector2(5, -11.5)
+rotation = 1.5708
+
+[node name="ShootMarkerRight" type="Marker2D" parent="."]
+position = Vector2(5, 11.5)
+rotation = 1.5708
+
 [connection signal="body_entered" from="CollectionHitbox" to="." method="_on_collection_hitbox_body_entered"]
 [connection signal="finished" from="EngineSounds" to="." method="_on_audio_stream_player_2d_finished"]
 [connection signal="body_entered" from="UpgradesHitbox" to="." method="_on_upgrades_hitbox_body_entered"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

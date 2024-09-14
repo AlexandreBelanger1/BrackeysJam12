@@ -6,11 +6,18 @@ extends CharacterBody2D
 @onready var hitbox = $Hitbox
 @onready var mower_size = $CollectionHitbox/MowerSize
 @onready var engine_sounds = $EngineSounds
+@onready var shoot_timer = $ShootTimer
+@onready var shoot_marker_left = $ShootMarkerLeft
+@onready var shoot_marker_right = $ShootMarkerRight
+
+
+
+const BULLET = preload("res://Scenes/bullet.tscn")
 
 var engineTopSpeedPitch = 1.5
 var engineTopTurningSpeedPitch = 0.5
 var turningTopSpeed = 4000.00
-var topSpeed = 7000.00
+var topSpeed = 70000.00
 var speed = 0.00
 var turnSpeed = 0.60
 var direction = Vector2(1,0)
@@ -20,10 +27,21 @@ var leftTurning = false
 var rightTurning = false
 var accelerating = true
 var stormText = false
+var gun = false
+var shooting = false
+var upgradedChassis = false
+
+func _input(event):
+	if event.is_action_pressed("shoot") and gun:
+		shoot_timer.start()
+	if event.is_action_released("shoot") and gun:
+		shoot_timer.stop()
+
 
 func _ready():
 	SignalBus.upgradeUnlock.connect(upgrade)
 	SignalBus.garageUI.connect(garageReset)
+	SignalBus.halfway.connect(gunEnable)
 
 func _physics_process(delta):
 	direction = (front_bumper.global_position - rear_bumper.global_position).normalized()
@@ -82,8 +100,11 @@ func _on_collection_hitbox_body_entered(body):
 
 func upgrade(index: int)->void:
 	if index ==  5:
+		upgradedChassis = true
 		scale = scale * 2
 		sprite_2d.play("SuperTractor")
+		if gun:
+			sprite_2d.play("SuperTractorGun")
 	if index == 10:
 		turnSpeed = turnSpeed + 0.3
 		turningTopSpeed = 5000.00
@@ -122,3 +143,23 @@ func _on_upgrades_hitbox_body_entered(body):
 
 func getRearHitch():
 	return rear_bumper.global_position
+
+func gunEnable():
+	gun = true
+	if !upgradedChassis:
+		sprite_2d.play("decentTractorGun")
+	else:
+		sprite_2d.play("SuperTractorGun")
+
+
+func _on_shoot_timer_timeout():
+	var shotL = BULLET.instantiate()
+	get_parent().add_child(shotL)
+	shotL.global_position = shoot_marker_left.global_position
+	shotL.rotation = rotation
+	
+	var shotR = BULLET.instantiate()
+	get_parent().add_child(shotR)
+	shotR.global_position = shoot_marker_right.global_position
+	shotR.rotation = rotation
+
