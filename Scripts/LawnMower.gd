@@ -113,10 +113,10 @@ func upgrade(index: int)->void:
 		topSpeed = 9000.00
 		engineTopSpeedPitch += 0.3
 	if index == 2:
-		topSpeed = 11000.00
+		topSpeed = 15000.00
 		engineTopSpeedPitch += 1.0
 	if index == 3:
-		topSpeed = 18100.00
+		topSpeed = 30000.00
 		engineTopSpeedPitch += 3.0
 	if index == 7:
 		acceleration = 0.40
@@ -162,4 +162,5 @@ func _on_shoot_timer_timeout():
 	get_parent().add_child(shotR)
 	shotR.global_position = shoot_marker_right.global_position
 	shotR.rotation = rotation
+	SignalBus.shoot.emit()
 

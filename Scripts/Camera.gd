@@ -15,6 +15,10 @@ func randomOffset():
 
 func _physics_process(delta):
 	global_position = lerp(global_position, player.global_position, delta*5)
+	
+	if shakeStrength > 0:
+		shakeStrength = lerpf(shakeStrength,0,shakeFade * delta)
+		offset = randomOffset()
 
 func shake():
-	pass
+	shakeStrength = randomStrength

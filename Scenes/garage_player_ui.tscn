@@ -210,7 +210,6 @@ sprite_frames = SubResource("SpriteFrames_34kxp")
 
 [node name="SizeUpgrade" type="Sprite2D" parent="ColorRect/SizeUpgradeFrame"]
 position = Vector2(-0.399997, -1.8)
-scale = Vector2(1, 1)
 texture = ExtResource("6_vbxlu")
 
 [node name="SizeButton" type="TextureButton" parent="ColorRect/SizeUpgradeFrame"]
@@ -228,7 +227,6 @@ sprite_frames = SubResource("SpriteFrames_uansl")
 
 [node name="AccelerationUpgrade" type="Sprite2D" parent="ColorRect/AccelUpgradeFrame"]
 position = Vector2(-0.999999, -1.8)
-scale = Vector2(1, 1)
 texture = ExtResource("5_5g844")
 
 [node name="AccelerateButton" type="TextureButton" parent="ColorRect/AccelUpgradeFrame"]
@@ -246,7 +244,6 @@ sprite_frames = SubResource("SpriteFrames_43a1j")
 
 [node name="TurningSpeedUpgrade" type="Sprite2D" parent="ColorRect/TurnSpeedUpgradeFrame"]
 position = Vector2(0.399998, -1.6)
-scale = Vector2(1, 1)
 texture = ExtResource("3_0k3yh")
 
 [node name="TurnSpeedButton" type="TextureButton" parent="ColorRect/TurnSpeedUpgradeFrame"]

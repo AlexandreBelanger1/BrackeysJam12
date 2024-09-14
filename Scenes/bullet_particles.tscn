@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://e3aysu632cj5"]
+
+[ext_resource type="Texture2D" uid="uid://b10j7ripdq561" path="res://Assets/Sprites/bulletParticles.png" id="1_uxq7i"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l2eww"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_53caf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5552c"]
+curve = SubResource("Curve_53caf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q2pen"]
+particle_flag_disable_z = true
+angle_min = -192.0
+angle_max = 125.5
+direction = Vector3(1, 1, 0)
+spread = 180.0
+flatness = 0.426
+initial_velocity_min = 5.13
+initial_velocity_max = 20.51
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 10.26
+radial_accel_max = 32.78
+scale_curve = SubResource("CurveTexture_5552c")
+anim_offset_max = 1.0
+
+[sub_resource type="Animation" id="Animation_08hh1"]
+resource_name = "particlesEmit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_evs8k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nkfc4"]
+_data = {
+"RESET": SubResource("Animation_evs8k"),
+"particlesEmit": SubResource("Animation_08hh1")
+}
+
+[node name="BulletParticles" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_l2eww")
+amount = 7
+process_material = SubResource("ParticleProcessMaterial_q2pen")
+texture = ExtResource("1_uxq7i")
+lifetime = 0.5
+explosiveness = 0.88
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GPUParticles2D"]
+libraries = {
+"": SubResource("AnimationLibrary_nkfc4")
+}
+autoplay = "particlesEmit"
