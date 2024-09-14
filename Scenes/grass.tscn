@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp4fk82jb8xfe"]
+
+[ext_resource type="Texture2D" uid="uid://c2q388pcdbmai" path="res://Assets/Sprites/Tall Grass.png" id="1_tk3tf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aqob0"]
+radius = 8.0
+
+[node name="Grass" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_aqob0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tk3tf")

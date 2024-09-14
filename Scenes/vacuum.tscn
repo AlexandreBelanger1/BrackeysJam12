@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://4ax56fh4ddqb"]
+
+[ext_resource type="Script" path="res://Scripts/Vacuum.gd" id="1_xqgae"]
+[ext_resource type="Texture2D" uid="uid://cvr7fc7707075" path="res://Assets/Sprites/Vacuum.png" id="2_yagng"]
+
+[node name="Vacuum" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_xqgae")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, 2)
+texture = ExtResource("2_yagng")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 300, -85, 300, 85)
+disabled = true
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(20, 0)
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

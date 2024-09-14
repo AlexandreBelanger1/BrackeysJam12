@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmefy7u7hh8gg"]
+
+[ext_resource type="Script" path="res://Scripts/HouseIntegrity.gd" id="1_tqc8r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucpp7"]
+bg_color = Color(0.513726, 0.513726, 0.513726, 0.737255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipv5r"]
+bg_color = Color(0.700781, 0.147994, 0.122867, 1)
+
+[node name="HouseIntegrity" type="Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tqc8r")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 529.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ucpp7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ipv5r")
+max_value = 1000.0
+step = 1.0
+value = 1000.0
+show_percentage = false

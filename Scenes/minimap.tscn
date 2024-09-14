@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://buq8gu885q4xw"]
+
+[ext_resource type="Script" path="res://Scripts/Minimap.gd" id="1_48olt"]
+
+[node name="Minimap" type="Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48olt")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1031.0
+offset_top = 13.0
+offset_right = 1131.0
+offset_bottom = 113.0
+color = Color(0.184314, 0.184314, 0.184314, 0.843137)
+
+[node name="Marker2D" type="Marker2D" parent="Background"]
+position = Vector2(10, 10)

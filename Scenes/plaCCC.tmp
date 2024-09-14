@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://djhe8reawejrw"]
+
+[ext_resource type="Script" path="res://Scripts/LawnMower.gd" id="1_mp85h"]
+[ext_resource type="Texture2D" uid="uid://br2r6gq08qs5u" path="res://icon.svg" id="2_1s381"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jif76"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wwnw"]
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_mp85h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, 3.8147e-06)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_1s381")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jif76")
+
+[node name="CollectionHitbox" type="Area2D" parent="."]
+rotation = 0.00212234
+collision_layer = 4
+collision_mask = 2
+
+[node name="MowerSize" type="CollisionShape2D" parent="CollectionHitbox"]
+shape = SubResource("CircleShape2D_6wwnw")
+
+[node name="FrontBumper" type="Marker2D" parent="."]
+position = Vector2(13, 0)
+
+[node name="RearBumper" type="Marker2D" parent="."]
+position = Vector2(-13, 0)
+
+[connection signal="body_entered" from="CollectionHitbox" to="." method="_on_collection_hitbox_body_entered"]

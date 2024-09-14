@@ -1,0 +1,144 @@
+[gd_scene load_steps=13 format=3 uid="uid://b12idb4ma5mm1"]
+
+[ext_resource type="PackedScene" uid="uid://bwxjf3dr75uq0" path="res://Scenes/tilemap.tscn" id="1_jinbg"]
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_mpyx1"]
+[ext_resource type="PackedScene" uid="uid://jmjgdmh5au8g" path="res://Scenes/camera.tscn" id="2_0a7oh"]
+[ext_resource type="PackedScene" uid="uid://djhe8reawejrw" path="res://Scenes/player.tscn" id="3_24m0j"]
+[ext_resource type="PackedScene" uid="uid://sam6rfrau4vk" path="res://Scenes/user_interface.tscn" id="4_sx5y1"]
+[ext_resource type="PackedScene" uid="uid://bkh8lgkghcnsd" path="res://Scenes/house.tscn" id="7_62yov"]
+[ext_resource type="PackedScene" uid="uid://b4ybnaycjf4og" path="res://Scenes/garage.tscn" id="8_5ug1i"]
+[ext_resource type="PackedScene" uid="uid://b877h3n5rvif4" path="res://Scenes/SmokeParticles.tscn" id="8_xlmh3"]
+[ext_resource type="PackedScene" uid="uid://dvq7nl5xeioe3" path="res://Scenes/trailer.tscn" id="9_wxp64"]
+[ext_resource type="PackedScene" uid="uid://dj08v856b3r0j" path="res://Scenes/fence.tscn" id="11_ekimo"]
+[ext_resource type="Texture2D" uid="uid://dgouljl3cestk" path="res://Assets/Sprites/GrassDecal.png" id="12_bwfe8"]
+[ext_resource type="PackedScene" uid="uid://bj4eewpgajgu0" path="res://Scenes/ant_spawner.tscn" id="13_t1s0f"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_mpyx1")
+
+[node name="Tilemap" parent="." instance=ExtResource("1_jinbg")]
+position = Vector2(416, -408)
+
+[node name="Camera" parent="." instance=ExtResource("2_0a7oh")]
+position = Vector2(848, 405)
+
+[node name="UserInterface" parent="Camera" instance=ExtResource("4_sx5y1")]
+process_mode = 0
+offset_left = -565.0
+offset_top = -330.0
+offset_right = -565.0
+offset_bottom = -330.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(827, 404)
+node_a = NodePath("../Player")
+node_b = NodePath("../Trailer")
+bias = 0.262
+softness = 1.04
+
+[node name="Player" parent="." instance=ExtResource("3_24m0j")]
+y_sort_enabled = true
+position = Vector2(853, 404)
+
+[node name="House" parent="." instance=ExtResource("7_62yov")]
+y_sort_enabled = true
+position = Vector2(877, 332)
+
+[node name="Garage" parent="." instance=ExtResource("8_5ug1i")]
+y_sort_enabled = true
+position = Vector2(493, 326)
+
+[node name="GrassGroup" type="Node" parent="."]
+
+[node name="Smoke" parent="." instance=ExtResource("8_xlmh3")]
+position = Vector2(845, 397)
+
+[node name="Trailer" parent="." instance=ExtResource("9_wxp64")]
+position = Vector2(827, 404)
+rotation = 1.55289
+collision_layer = 0
+
+[node name="Fence" parent="." instance=ExtResource("11_ekimo")]
+position = Vector2(2176, 384)
+
+[node name="GrassDecal" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(912, 329)
+texture = ExtResource("12_bwfe8")
+
+[node name="GrassDecal2" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(945, 329)
+texture = ExtResource("12_bwfe8")
+
+[node name="GrassDecal3" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(979, 329)
+texture = ExtResource("12_bwfe8")
+
+[node name="GrassDecal4" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1011, 329)
+texture = ExtResource("12_bwfe8")
+
+[node name="GrassDecal5" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(851, 332)
+texture = ExtResource("12_bwfe8")
+
+[node name="GrassDecal6" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(881, 332)
+texture = ExtResource("12_bwfe8")
+
+[node name="GrassDecal7" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(818, 328)
+texture = ExtResource("12_bwfe8")
+
+[node name="GrassDecal8" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(786, 329)
+texture = ExtResource("12_bwfe8")
+
+[node name="GrassDecal9" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(753, 328)
+texture = ExtResource("12_bwfe8")
+
+[node name="GrassDecal10" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(724, 329)
+texture = ExtResource("12_bwfe8")
+
+[node name="GrassDecal11" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(715, 328)
+texture = ExtResource("12_bwfe8")
+
+[node name="GrassDecal16" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(343, 327)
+texture = ExtResource("12_bwfe8")
+
+[node name="GrassDecal17" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(649, 328)
+texture = ExtResource("12_bwfe8")
+
+[node name="AntSpawner" parent="." instance=ExtResource("13_t1s0f")]
+position = Vector2(871, 316)

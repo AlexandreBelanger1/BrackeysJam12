@@ -1,0 +1,111 @@
+[gd_scene load_steps=16 format=3 uid="uid://bkh8lgkghcnsd"]
+
+[ext_resource type="Script" path="res://Scripts/house.gd" id="1_2qn7h"]
+[ext_resource type="Texture2D" uid="uid://cb2qn5swuvk2v" path="res://Assets/Sprites/HouseSprites/Gamejam_House.png" id="2_mt1t5"]
+[ext_resource type="Texture2D" uid="uid://bn8hlk5ppwo57" path="res://Assets/Sprites/HouseSprites/Gamejam_House State1.png" id="3_opbps"]
+[ext_resource type="Texture2D" uid="uid://bap8sojhnethw" path="res://Assets/Sprites/HouseSprites/Gamejam_House State2.png" id="4_rik5a"]
+[ext_resource type="Texture2D" uid="uid://6gf5rh14435h" path="res://Assets/Sprites/HouseSprites/Gamejam_House State3.png" id="5_kmuth"]
+[ext_resource type="Texture2D" uid="uid://b6qpubrphx5m3" path="res://Assets/Sprites/HouseSprites/Gamejam_House State4.png" id="6_5otpm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5ws1"]
+atlas = ExtResource("2_mt1t5")
+region = Rect2(0, 0, 191, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec88w"]
+atlas = ExtResource("3_opbps")
+region = Rect2(0, 0, 191, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wn1l"]
+atlas = ExtResource("4_rik5a")
+region = Rect2(0, 0, 191, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m6xv"]
+atlas = ExtResource("5_kmuth")
+region = Rect2(0, 0, 191, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7i6n"]
+atlas = ExtResource("6_5otpm")
+region = Rect2(0, 0, 191, 151)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4he3f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5ws1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec88w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wn1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m6xv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7i6n")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6aou"]
+size = Vector2(113, 78.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtmcn"]
+size = Vector2(118.333, 64.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huo5w"]
+size = Vector2(114.667, 90.3333)
+
+[node name="House" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_2qn7h")
+
+[node name="HouseSprite" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(0, -1.33333)
+sprite_frames = SubResource("SpriteFrames_4he3f")
+frame = 1
+frame_progress = 1.0
+offset = Vector2(0, -73)
+
+[node name="TopLeftMarker" type="Marker2D" parent="."]
+z_index = 3
+position = Vector2(-63.6667, -105.667)
+
+[node name="BottomRightMarker" type="Marker2D" parent="."]
+position = Vector2(53.3333, 2.33333)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(8.33333, -70.6667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-11, 32.75)
+shape = SubResource("RectangleShape2D_a6aou")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0.333333, 1.33333)
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.16667, -29.1667)
+shape = SubResource("RectangleShape2D_dtmcn")
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="BehindHouse" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 260
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BehindHouse"]
+position = Vector2(-1.33333, -105.5)
+shape = SubResource("RectangleShape2D_huo5w")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
+[connection signal="body_entered" from="BehindHouse" to="." method="_on_behind_house_body_entered"]
+[connection signal="body_exited" from="BehindHouse" to="." method="_on_behind_house_body_exited"]

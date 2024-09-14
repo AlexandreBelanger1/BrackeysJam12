@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqw5p5wjngvdf"]
+
+[ext_resource type="Texture2D" uid="uid://cqvvnsnptis7s" path="res://Assets/Sprites/particles.png" id="1_t4aht"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nbe1e"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4ff0k"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 21.039
+initial_velocity_min = 9.48
+initial_velocity_max = 33.17
+angular_velocity_min = -293.46
+angular_velocity_max = 293.46
+gravity = Vector3(0, 10, 0)
+anim_offset_max = 1.0
+
+[sub_resource type="Animation" id="Animation_0a7rm"]
+resource_name = "ParticlesEmit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_632cd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v8gdh"]
+_data = {
+"ParticlesEmit": SubResource("Animation_0a7rm"),
+"RESET": SubResource("Animation_632cd")
+}
+
+[node name="GrassParticles" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0.0779685, 0.284736, 0, 1)
+material = SubResource("CanvasItemMaterial_nbe1e")
+amount = 2
+process_material = SubResource("ParticleProcessMaterial_4ff0k")
+texture = ExtResource("1_t4aht")
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GPUParticles2D"]
+libraries = {
+"": SubResource("AnimationLibrary_v8gdh")
+}
+autoplay = "ParticlesEmit"

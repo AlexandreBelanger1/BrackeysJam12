@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://sam6rfrau4vk"]
+
+[ext_resource type="Script" path="res://Scripts/UserInterface.gd" id="1_48x6f"]
+[ext_resource type="PackedScene" uid="uid://h41wx86oj4jg" path="res://Scenes/garage_player_ui.tscn" id="2_jweu5"]
+[ext_resource type="FontFile" uid="uid://vtp1crronryx" path="res://Assets/Fonts/Retro Gaming.ttf" id="2_v88ma"]
+[ext_resource type="PackedScene" uid="uid://cwoseguj8cs3g" path="res://Scenes/dialogue_box.tscn" id="3_ykji8"]
+[ext_resource type="PackedScene" uid="uid://buq8gu885q4xw" path="res://Scenes/minimap.tscn" id="4_5d43u"]
+[ext_resource type="PackedScene" uid="uid://cn5kjn4rxvd0p" path="res://Scenes/game_progress.tscn" id="5_om43d"]
+[ext_resource type="PackedScene" uid="uid://bmefy7u7hh8gg" path="res://Scenes/house_integrity.tscn" id="6_42sul"]
+[ext_resource type="Texture2D" uid="uid://bo0b2feyawf8o" path="res://Assets/Sprites/Currency.png" id="8_cva36"]
+[ext_resource type="AudioStream" uid="uid://bx12fj002iomg" path="res://Assets/Audio/mainTheme.wav" id="9_mn1ls"]
+
+[node name="UserInterface" type="Control"]
+process_mode = 3
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48x6f")
+
+[node name="ScoreLabel" type="Label" parent="."]
+z_index = 5
+layout_mode = 0
+offset_left = 37.0
+offset_top = 10.0
+offset_right = 131.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_v88ma")
+
+[node name="garagePlayerUI" parent="." instance=ExtResource("2_jweu5")]
+visible = false
+z_index = 5
+layout_mode = 1
+offset_left = 52.0
+offset_top = -30.0
+offset_right = 52.0
+offset_bottom = -30.0
+
+[node name="DialogueBox" parent="." instance=ExtResource("3_ykji8")]
+z_index = 5
+layout_mode = 1
+offset_left = -5.0
+offset_top = 12.0
+offset_right = -5.0
+offset_bottom = 12.0
+
+[node name="Minimap" parent="." instance=ExtResource("4_5d43u")]
+z_index = 5
+layout_mode = 1
+offset_left = -4.0
+offset_top = 3.0
+offset_right = -4.0
+offset_bottom = 3.0
+
+[node name="GameProgress" parent="." instance=ExtResource("5_om43d")]
+z_index = 5
+layout_mode = 1
+offset_left = 47.0
+offset_top = 4.0
+offset_right = 47.0
+offset_bottom = 4.0
+
+[node name="HouseIntegrity" parent="." instance=ExtResource("6_42sul")]
+layout_mode = 1
+offset_left = 307.0
+offset_top = 43.0
+offset_right = 307.0
+offset_bottom = 43.0
+
+[node name="GameOverButton" type="Button" parent="."]
+process_mode = 3
+visible = false
+z_index = 4
+layout_mode = 0
+offset_left = 417.0
+offset_top = 164.0
+offset_right = 698.0
+offset_bottom = 340.0
+text = "GAME OVER
+(TRY AGAIN?)"
+
+[node name="Gear" type="Sprite2D" parent="."]
+position = Vector2(19, 19)
+texture = ExtResource("8_cva36")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_mn1ls")
+volume_db = -8.034
+autoplay = true
+
+[connection signal="pressed" from="GameOverButton" to="." method="_on_button_pressed"]

@@ -1,0 +1,229 @@
+[gd_scene load_steps=28 format=3 uid="uid://b4ybnaycjf4og"]
+
+[ext_resource type="Script" path="res://Scripts/garage.gd" id="1_nalak"]
+[ext_resource type="Texture2D" uid="uid://c0ylqtwhr03q8" path="res://Assets/Sprites/Barn Closing.png" id="2_1y4c1"]
+[ext_resource type="Texture2D" uid="uid://ddmvv2i2p3mme" path="res://Assets/Sprites/Big Barn Background.png" id="2_bsc7a"]
+[ext_resource type="Texture2D" uid="uid://c2av6iab6adnr" path="res://Assets/Sprites/Big Barn Opening.png" id="3_imavp"]
+[ext_resource type="Texture2D" uid="uid://b8n35jqu2iyp7" path="res://Assets/Sprites/Barn Opening.png" id="3_o5tgp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk025"]
+atlas = ExtResource("3_imavp")
+region = Rect2(0, 0, 111, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_424cg"]
+atlas = ExtResource("3_imavp")
+region = Rect2(111, 0, 111, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqocb"]
+atlas = ExtResource("3_imavp")
+region = Rect2(0, 73, 111, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syxhj"]
+atlas = ExtResource("3_imavp")
+region = Rect2(111, 73, 111, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okpd6"]
+atlas = ExtResource("3_imavp")
+region = Rect2(0, 146, 111, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7us5y"]
+atlas = ExtResource("3_imavp")
+region = Rect2(111, 146, 111, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxmof"]
+atlas = ExtResource("3_imavp")
+region = Rect2(0, 219, 111, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uory0"]
+atlas = ExtResource("3_imavp")
+region = Rect2(111, 219, 111, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnd7w"]
+atlas = ExtResource("3_o5tgp")
+region = Rect2(0, 0, 50, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6wqi"]
+atlas = ExtResource("3_o5tgp")
+region = Rect2(50, 0, 50, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e8o7"]
+atlas = ExtResource("3_o5tgp")
+region = Rect2(100, 0, 50, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty03q"]
+atlas = ExtResource("3_o5tgp")
+region = Rect2(0, 71, 50, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtcmm"]
+atlas = ExtResource("3_o5tgp")
+region = Rect2(50, 71, 50, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juews"]
+atlas = ExtResource("3_o5tgp")
+region = Rect2(100, 71, 50, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glg1w"]
+atlas = ExtResource("3_o5tgp")
+region = Rect2(0, 142, 50, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euqqf"]
+atlas = ExtResource("3_o5tgp")
+region = Rect2(50, 142, 50, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26akv"]
+atlas = ExtResource("2_1y4c1")
+region = Rect2(50, 142, 50, 71)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_705ov"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk025")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_424cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqocb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syxhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okpd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7us5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxmof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uory0")
+}],
+"loop": false,
+"name": &"BigOpen",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnd7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6wqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e8o7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty03q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtcmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juews")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glg1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euqqf")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26akv")
+}],
+"loop": false,
+"name": &"Shut",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1fc2"]
+size = Vector2(283, 22.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_omu76"]
+radius = 204.157
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cldjc"]
+size = Vector2(284, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eau6v"]
+size = Vector2(284, 86)
+
+[node name="Garage" type="StaticBody2D"]
+script = ExtResource("1_nalak")
+
+[node name="GarageInterior" type="Sprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(4, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("2_bsc7a")
+offset = Vector2(0, -14)
+
+[node name="GarageSprite" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(1, -2.00001)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_705ov")
+animation = &"BigOpen"
+autoplay = "BigOpen"
+frame_progress = 1.0
+speed_scale = 0.0
+offset = Vector2(0, -34)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.300003, -61.5)
+polygon = PackedVector2Array(-160.7, -52.5, 166.3, -53.5, 166.3, 63.5, 145.3, 63.5, 145.3, -26.5, -139.7, -26.5, -139.7, 63.5, -160.7, 63.5)
+
+[node name="EnterGarage" type="Area2D" parent="."]
+position = Vector2(-72.8, -123.5)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterGarage"]
+position = Vector2(76.3, 46.25)
+shape = SubResource("RectangleShape2D_x1fc2")
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+position = Vector2(-72.8, -123.5)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
+position = Vector2(73, 63)
+shape = SubResource("CircleShape2D_omu76")
+
+[node name="DoorHitbox" type="StaticBody2D" parent="."]
+position = Vector2(-72.8, -123.5)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHitbox"]
+position = Vector2(74.8, 107.5)
+shape = SubResource("RectangleShape2D_cldjc")
+
+[node name="TopLeftMarker" type="Marker2D" parent="."]
+position = Vector2(-165, -131)
+
+[node name="BottomRightMarker" type="Marker2D" parent="."]
+position = Vector2(169, 9)
+
+[node name="PlayerEnter" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerEnter"]
+position = Vector2(3, -46)
+shape = SubResource("RectangleShape2D_eau6v")
+
+[connection signal="animation_finished" from="GarageSprite" to="." method="_on_garage_sprite_animation_finished"]
+[connection signal="body_entered" from="EnterGarage" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="DetectPlayer" to="." method="_on_detect_player_body_entered"]
+[connection signal="body_exited" from="DetectPlayer" to="." method="_on_detect_player_body_exited"]
+[connection signal="body_entered" from="PlayerEnter" to="." method="_on_player_enter_body_entered"]
+[connection signal="body_exited" from="PlayerEnter" to="." method="_on_player_enter_body_exited"]

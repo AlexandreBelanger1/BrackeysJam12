@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://dvq7nl5xeioe3"]
+
+[ext_resource type="Script" path="res://Scripts/trailer.gd" id="1_hpfr7"]
+[ext_resource type="Texture2D" uid="uid://nbbynfhwt5on" path="res://Assets/Sprites/SuperTrailer.png" id="2_wxw7p"]
+[ext_resource type="Texture2D" uid="uid://dsnata38nvccv" path="res://Assets/Sprites/SmallTrailer.png" id="2_y4uv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6csx"]
+size = Vector2(111, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnegu"]
+atlas = ExtResource("2_y4uv7")
+region = Rect2(0, 0, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqxxh"]
+atlas = ExtResource("2_y4uv7")
+region = Rect2(0, 8, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqrp7"]
+atlas = ExtResource("2_wxw7p")
+region = Rect2(0, 0, 100, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4bcm"]
+atlas = ExtResource("2_wxw7p")
+region = Rect2(0, 10, 100, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvwr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnegu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqxxh")
+}],
+"loop": true,
+"name": &"BasicTrailer",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqrp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4bcm")
+}],
+"loop": true,
+"name": &"SuperTrailer",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lfsr"]
+size = Vector2(111, 11.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4y8b"]
+size = Vector2(111, 19)
+
+[node name="Trailer" type="RigidBody2D"]
+visible = false
+z_index = 2
+collision_layer = 36
+collision_mask = 68
+gravity_scale = 0.0
+linear_damp = 15.97
+script = ExtResource("1_hpfr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 19.5)
+shape = SubResource("RectangleShape2D_q6csx")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7.62939e-06, 18.5)
+scale = Vector2(1.725, 1.55)
+sprite_frames = SubResource("SpriteFrames_yvwr4")
+animation = &"SuperTrailer"
+autoplay = "BasicTrailer"
+frame_progress = 0.235033
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 27.625)
+shape = SubResource("RectangleShape2D_8lfsr")
+
+[node name="upgradesHitbox" type="Area2D" parent="."]
+collision_layer = 36
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="upgradesHitbox"]
+position = Vector2(-0.5, 17.5)
+shape = SubResource("RectangleShape2D_e4y8b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="upgradesHitbox" to="." method="_on_upgrades_hitbox_area_entered"]
+[connection signal="body_entered" from="upgradesHitbox" to="." method="_on_upgrades_hitbox_body_entered"]

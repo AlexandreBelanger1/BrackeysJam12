@@ -1,0 +1,390 @@
+[gd_scene load_steps=37 format=3 uid="uid://h41wx86oj4jg"]
+
+[ext_resource type="Script" path="res://Scripts/garageUI.gd" id="1_mri1w"]
+[ext_resource type="Texture2D" uid="uid://bcch0drkkql06" path="res://Assets/Sprites/GarageUISpriteFrame.png" id="2_2gtbg"]
+[ext_resource type="Texture2D" uid="uid://cwx13uq4hm4jn" path="res://Assets/Sprites/Xbutton.png" id="2_fovqi"]
+[ext_resource type="Texture2D" uid="uid://dl4kjmx8t2ro4" path="res://Assets/Sprites/GarageUIBackground.png" id="2_jssva"]
+[ext_resource type="Texture2D" uid="uid://bdthhiy8riypf" path="res://Assets/Sprites/TurningSpeedUpgrade.png" id="3_0k3yh"]
+[ext_resource type="Texture2D" uid="uid://bjmjpnbxdvq3d" path="res://Assets/Sprites/XbuttonPressed.png" id="3_v3yij"]
+[ext_resource type="Texture2D" uid="uid://bb3eh02tqg6ub" path="res://Assets/Sprites/SpeedUpgrade.png" id="4_721rx"]
+[ext_resource type="Texture2D" uid="uid://biwsdnpfxcc5" path="res://Assets/Sprites/XbuttonHover.png" id="4_ey3ev"]
+[ext_resource type="Texture2D" uid="uid://b6x81ljsx654g" path="res://Assets/Sprites/AccelerationUpgrade.png" id="5_5g844"]
+[ext_resource type="Texture2D" uid="uid://by8lxi5vdwkfm" path="res://Assets/Sprites/UpgradeButtonPressed.png" id="5_bxnts"]
+[ext_resource type="Texture2D" uid="uid://56g8bluaqikx" path="res://Assets/Sprites/SizeUpgrade.png" id="6_vbxlu"]
+[ext_resource type="Texture2D" uid="uid://b0fljn4r7yc21" path="res://Assets/Sprites/UpgradeButtonHover.png" id="6_vtr2b"]
+[ext_resource type="FontFile" uid="uid://vtp1crronryx" path="res://Assets/Fonts/Retro Gaming.ttf" id="12_7fh2i"]
+[ext_resource type="Texture2D" uid="uid://bo0b2feyawf8o" path="res://Assets/Sprites/Currency.png" id="12_immf7"]
+[ext_resource type="AudioStream" uid="uid://braxf75u53mnl" path="res://Assets/Audio/ButtonHover.wav" id="13_8hxq3"]
+[ext_resource type="AudioStream" uid="uid://bghpjrpx0p77p" path="res://Assets/Audio/ButtonPressed.wav" id="14_iph2i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc0x0"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(0, 0, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns3g4"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(23, 0, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unesv"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(0, 24, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnha0"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(23, 24, 23, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_10sfk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc0x0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns3g4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unesv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnha0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h35rg"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(0, 0, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li7mu"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(23, 0, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vg1bn"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(0, 24, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd7ha"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(23, 24, 23, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_34kxp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h35rg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li7mu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vg1bn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd7ha")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxcft"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(0, 0, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmhvk"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(23, 0, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fj0h"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(0, 24, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfsio"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(23, 24, 23, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uansl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxcft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmhvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fj0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfsio")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x34r0"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(0, 0, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gftl0"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(23, 0, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj3rw"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(0, 24, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkjlg"]
+atlas = ExtResource("2_2gtbg")
+region = Rect2(23, 24, 23, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43a1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x34r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gftl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj3rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkjlg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="garagePlayerUI" type="Control"]
+process_mode = 3
+z_index = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mri1w")
+
+[node name="ColorRect" type="Sprite2D" parent="."]
+position = Vector2(557, 365)
+texture = ExtResource("2_jssva")
+
+[node name="DoneButton" type="TextureButton" parent="ColorRect"]
+offset_left = 318.5
+offset_top = -249.0
+offset_right = 350.5
+offset_bottom = -216.0
+texture_normal = ExtResource("2_fovqi")
+texture_pressed = ExtResource("3_v3yij")
+texture_hover = ExtResource("4_ey3ev")
+
+[node name="SpeedUpgradeFrame" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(-281.5, -189)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_10sfk")
+autoplay = "default"
+
+[node name="SpeedUpgrade" type="Sprite2D" parent="ColorRect/SpeedUpgradeFrame"]
+position = Vector2(0.4, -1.6)
+texture = ExtResource("4_721rx")
+
+[node name="SpeedButton" type="TextureButton" parent="ColorRect/SpeedUpgradeFrame"]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 10.0
+offset_bottom = 7.0
+texture_pressed = ExtResource("5_bxnts")
+texture_hover = ExtResource("6_vtr2b")
+
+[node name="SizeUpgradeFrame" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(-281.5, -64)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_34kxp")
+
+[node name="SizeUpgrade" type="Sprite2D" parent="ColorRect/SizeUpgradeFrame"]
+position = Vector2(-0.399997, -1.8)
+scale = Vector2(1, 1)
+texture = ExtResource("6_vbxlu")
+
+[node name="SizeButton" type="TextureButton" parent="ColorRect/SizeUpgradeFrame"]
+offset_left = -11.0
+offset_top = -10.8
+offset_right = 10.0
+offset_bottom = 7.2
+texture_pressed = ExtResource("5_bxnts")
+texture_hover = ExtResource("6_vtr2b")
+
+[node name="AccelUpgradeFrame" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(-282.5, 61)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_uansl")
+
+[node name="AccelerationUpgrade" type="Sprite2D" parent="ColorRect/AccelUpgradeFrame"]
+position = Vector2(-0.999999, -1.8)
+scale = Vector2(1, 1)
+texture = ExtResource("5_5g844")
+
+[node name="AccelerateButton" type="TextureButton" parent="ColorRect/AccelUpgradeFrame"]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 10.0
+offset_bottom = 6.99999
+texture_pressed = ExtResource("5_bxnts")
+texture_hover = ExtResource("6_vtr2b")
+
+[node name="TurnSpeedUpgradeFrame" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(-283.5, 187)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_43a1j")
+
+[node name="TurningSpeedUpgrade" type="Sprite2D" parent="ColorRect/TurnSpeedUpgradeFrame"]
+position = Vector2(0.399998, -1.6)
+scale = Vector2(1, 1)
+texture = ExtResource("3_0k3yh")
+
+[node name="TurnSpeedButton" type="TextureButton" parent="ColorRect/TurnSpeedUpgradeFrame"]
+offset_left = -10.8
+offset_top = -11.0
+offset_right = 10.2
+offset_bottom = 7.0
+texture_pressed = ExtResource("5_bxnts")
+texture_hover = ExtResource("6_vtr2b")
+
+[node name="SpeedLabel" type="Label" parent="ColorRect"]
+offset_left = -209.5
+offset_top = -237.0
+offset_right = 150.5
+offset_bottom = -186.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("12_7fh2i")
+theme_override_font_sizes/font_size = 32
+text = "Higher Top-Speed"
+
+[node name="SizeLabel" type="Label" parent="ColorRect"]
+offset_left = -212.5
+offset_top = -120.0
+offset_right = 51.5
+offset_bottom = -69.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("12_7fh2i")
+theme_override_font_sizes/font_size = 32
+text = "Basic Trailer"
+
+[node name="AccelLabel" type="Label" parent="ColorRect"]
+offset_left = -213.5
+offset_top = 5.0
+offset_right = 256.5
+offset_bottom = 56.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("12_7fh2i")
+theme_override_font_sizes/font_size = 32
+text = "Improved Acceleration"
+
+[node name="TurnSpeedLabel" type="Label" parent="ColorRect"]
+offset_left = -215.5
+offset_top = 132.0
+offset_right = 163.5
+offset_bottom = 183.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("12_7fh2i")
+theme_override_font_sizes/font_size = 32
+text = "Improved Handling"
+
+[node name="SpeedCostLabel" type="Label" parent="ColorRect"]
+offset_left = -214.0
+offset_top = -192.0
+offset_right = -11.0
+offset_bottom = -130.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("12_7fh2i")
+theme_override_font_sizes/font_size = 48
+text = "100"
+
+[node name="SizeCostLabel" type="Label" parent="ColorRect"]
+offset_left = -214.0
+offset_top = -67.0
+offset_right = -11.0
+offset_bottom = -5.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("12_7fh2i")
+theme_override_font_sizes/font_size = 48
+text = "100"
+
+[node name="AccelCostLabel" type="Label" parent="ColorRect"]
+offset_left = -214.0
+offset_top = 59.0
+offset_right = -11.0
+offset_bottom = 121.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("12_7fh2i")
+theme_override_font_sizes/font_size = 48
+text = "100"
+
+[node name="TurnSpeedCostLabel" type="Label" parent="ColorRect"]
+offset_left = -214.0
+offset_top = 185.0
+offset_right = -11.0
+offset_bottom = 247.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("12_7fh2i")
+theme_override_font_sizes/font_size = 48
+text = "100"
+
+[node name="Currency" type="Sprite2D" parent="ColorRect"]
+position = Vector2(-85, -161)
+scale = Vector2(2, 2)
+texture = ExtResource("12_immf7")
+
+[node name="Currency2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(-83, -36)
+scale = Vector2(2, 2)
+texture = ExtResource("12_immf7")
+
+[node name="Currency3" type="Sprite2D" parent="ColorRect"]
+position = Vector2(-82, 90)
+scale = Vector2(2, 2)
+texture = ExtResource("12_immf7")
+
+[node name="Currency4" type="Sprite2D" parent="ColorRect"]
+position = Vector2(-80, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("12_immf7")
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_8hxq3")
+
+[node name="PressedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_iph2i")
+
+[connection signal="pressed" from="ColorRect/DoneButton" to="." method="_on_done_button_pressed"]
+[connection signal="mouse_entered" from="ColorRect/SpeedUpgradeFrame/SpeedButton" to="." method="_on_speed_button_mouse_entered"]
+[connection signal="pressed" from="ColorRect/SpeedUpgradeFrame/SpeedButton" to="." method="_on_speed_button_pressed"]
+[connection signal="mouse_entered" from="ColorRect/SizeUpgradeFrame/SizeButton" to="." method="_on_size_button_mouse_entered"]
+[connection signal="pressed" from="ColorRect/SizeUpgradeFrame/SizeButton" to="." method="_on_size_button_pressed"]
+[connection signal="mouse_entered" from="ColorRect/AccelUpgradeFrame/AccelerateButton" to="." method="_on_accelerate_button_mouse_entered"]
+[connection signal="pressed" from="ColorRect/AccelUpgradeFrame/AccelerateButton" to="." method="_on_accelerate_button_pressed"]
+[connection signal="mouse_entered" from="ColorRect/TurnSpeedUpgradeFrame/TurnSpeedButton" to="." method="_on_turn_speed_button_mouse_entered"]
+[connection signal="pressed" from="ColorRect/TurnSpeedUpgradeFrame/TurnSpeedButton" to="." method="_on_turn_speed_button_pressed"]

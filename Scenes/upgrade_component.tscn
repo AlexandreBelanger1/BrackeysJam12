@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm0p5jxm26fi5"]
+
+[ext_resource type="Texture2D" uid="uid://bo0b2feyawf8o" path="res://Assets/Sprites/Currency.png" id="1_q88ac"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gkq7"]
+
+[node name="UpgradeComponent" type="CharacterBody2D"]
+collision_layer = 64
+collision_mask = 36
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q88ac")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1gkq7")

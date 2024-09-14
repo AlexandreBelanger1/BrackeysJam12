@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3 uid="uid://b22jvtj3siimn"]
+
+[ext_resource type="Script" path="res://Scripts/ant.gd" id="1_40nkb"]
+[ext_resource type="Texture2D" uid="uid://cb1mn81gy42n5" path="res://Assets/Sprites/Ant.png" id="1_j4u6r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2dcq"]
+atlas = ExtResource("1_j4u6r")
+region = Rect2(0, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o33fo"]
+atlas = ExtResource("1_j4u6r")
+region = Rect2(16, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5b2x"]
+atlas = ExtResource("1_j4u6r")
+region = Rect2(0, 8, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv2wp"]
+atlas = ExtResource("1_j4u6r")
+region = Rect2(16, 8, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckbm8"]
+atlas = ExtResource("1_j4u6r")
+region = Rect2(0, 16, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p5wd"]
+atlas = ExtResource("1_j4u6r")
+region = Rect2(16, 16, 16, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3kmev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2dcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o33fo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5b2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv2wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckbm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p5wd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4b58q"]
+size = Vector2(14, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_av7lp"]
+size = Vector2(17, 9.5)
+
+[node name="Ant" type="CharacterBody2D"]
+z_index = 2
+y_sort_enabled = true
+scale = Vector2(2, 2)
+collision_layer = 256
+collision_mask = 4
+script = ExtResource("1_40nkb")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3kmev")
+autoplay = "default"
+frame_progress = 0.388501
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_4b58q")
+
+[node name="Front" type="Marker2D" parent="."]
+position = Vector2(9.5, 0)
+
+[node name="Back" type="Marker2D" parent="."]
+position = Vector2(-7.5, 0)
+
+[node name="TurningTimer" type="Timer" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 36
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1, 0.25)
+shape = SubResource("RectangleShape2D_av7lp")
+
+[connection signal="timeout" from="TurningTimer" to="." method="_on_turning_timer_timeout"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
