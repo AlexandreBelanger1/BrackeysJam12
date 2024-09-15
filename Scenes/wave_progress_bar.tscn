@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://dimclqvbmeysc"]
+
+[ext_resource type="Script" path="res://Scripts/WaveProgressBar.gd" id="1_v725p"]
+[ext_resource type="Texture2D" uid="uid://bf4ao38wg5pv5" path="res://Assets/Sprites/WaveBackground.png" id="2_vl351"]
+[ext_resource type="Texture2D" uid="uid://d0h242bk5c6fm" path="res://Assets/Sprites/WaveBorder.png" id="3_lvxoo"]
+[ext_resource type="Texture2D" uid="uid://l0s2q5jvckm" path="res://Assets/Sprites/WaveProgress.png" id="4_p42ne"]
+[ext_resource type="FontFile" uid="uid://vtp1crronryx" path="res://Assets/Fonts/Retro Gaming.ttf" id="5_brbbe"]
+
+[node name="WaveProgressBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v725p")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 20.0
+value = 20.0
+fill_mode = 1
+texture_under = ExtResource("2_vl351")
+texture_over = ExtResource("3_lvxoo")
+texture_progress = ExtResource("4_p42ne")
+
+[node name="Label" type="Label" parent="TextureProgressBar"]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 6.0
+offset_right = 310.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_brbbe")
+text = "WAVE 1"
+
+[node name="WaveProgressTimer" type="Timer" parent="."]
+
+[node name="NextWaveTimer" type="Timer" parent="."]
+wait_time = 27.0
+
+[connection signal="timeout" from="WaveProgressTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="NextWaveTimer" to="." method="_on_next_wave_timer_timeout"]

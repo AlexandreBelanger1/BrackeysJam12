@@ -17,7 +17,7 @@ const BULLET = preload("res://Scenes/bullet.tscn")
 var engineTopSpeedPitch = 1.5
 var engineTopTurningSpeedPitch = 0.5
 var turningTopSpeed = 4000.00
-var topSpeed = 70000.00
+var topSpeed = 6000.00
 var speed = 0.00
 var turnSpeed = 0.60
 var direction = Vector2(1,0)
@@ -117,7 +117,7 @@ func upgrade(index: int)->void:
 		engineTopSpeedPitch += 1.0
 	if index == 3:
 		topSpeed = 30000.00
-		engineTopSpeedPitch += 3.0
+		engineTopSpeedPitch += 1.0
 	if index == 7:
 		acceleration = 0.40
 	if index == 11:
@@ -125,13 +125,13 @@ func upgrade(index: int)->void:
 		turningTopSpeed = 6500.00
 		engineTopTurningSpeedPitch += 1
 	if index == 12:
-		turnSpeed = turnSpeed +0.5
-		turningTopSpeed = 8500.00
+		turnSpeed = turnSpeed +1.5
+		turningTopSpeed = 11000.00
 		engineTopTurningSpeedPitch += 1
 	if index == 8:
 		acceleration = 0.8
 	if index == 9:
-		acceleration = 1.1
+		acceleration = 2
 
 func garageReset(enabled:bool):
 	if !enabled:

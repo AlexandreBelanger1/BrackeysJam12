@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var back = $Back
 @onready var sprite_2d = $Sprite2D
 
-var speed = 5000
+var speed = 7000
 var direction
 var turnSpeed = 0.2
 

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://buq8gu885q4xw"]
+[gd_scene load_steps=5 format=3 uid="uid://buq8gu885q4xw"]
 
 [ext_resource type="Script" path="res://Scripts/Minimap.gd" id="1_48olt"]
+[ext_resource type="Texture2D" uid="uid://dld5cs34d6x8p" path="res://Assets/Sprites/MinimapHouse.png" id="2_6l165"]
+[ext_resource type="Texture2D" uid="uid://t6dd4v3xpfe0" path="res://Assets/Sprites/MinimapBarn.png" id="3_ypoh5"]
+[ext_resource type="Texture2D" uid="uid://l4b1b5oh5mty" path="res://Assets/Sprites/MinimapBackgroun.png" id="4_iy0k0"]
 
 [node name="Minimap" type="Control"]
 z_index = 4
@@ -8,8 +11,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1126.0
+offset_top = -13.0
+offset_right = -1126.0
+offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 script = ExtResource("1_48olt")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -18,7 +26,24 @@ offset_left = 1031.0
 offset_top = 13.0
 offset_right = 1131.0
 offset_bottom = 113.0
-color = Color(0.184314, 0.184314, 0.184314, 0.843137)
+color = Color(0.184314, 0.184314, 0.184314, 0)
 
 [node name="Marker2D" type="Marker2D" parent="Background"]
 position = Vector2(10, 10)
+
+[node name="MinimapHouse" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(1084, 52.5)
+scale = Vector2(1.5625, 1.5)
+texture = ExtResource("2_6l165")
+
+[node name="MinimapBarn" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(1067.5, 53.5)
+scale = Vector2(0.968751, 1.3)
+texture = ExtResource("3_ypoh5")
+
+[node name="NewBackground" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.572549)
+position = Vector2(1079, 63)
+texture = ExtResource("4_iy0k0")

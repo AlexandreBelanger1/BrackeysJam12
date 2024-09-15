@@ -25,6 +25,7 @@ func _input(event):
 			label.text = ""
 			newDialogue(newDialogueBuffer.pop_front())
 		else:
+			SignalBus.volume.emit(true)
 			running = false
 			get_tree().paused = false
 			color_rect.visible = false

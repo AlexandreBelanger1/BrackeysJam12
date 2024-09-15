@@ -1,0 +1,369 @@
+[gd_scene load_steps=22 format=3 uid="uid://b4qg11my7urj1"]
+
+[ext_resource type="FontFile" uid="uid://vtp1crronryx" path="res://Assets/Fonts/Retro Gaming.ttf" id="1_dip1i"]
+[ext_resource type="Script" path="res://Scripts/victory_screen.gd" id="1_fqmjd"]
+[ext_resource type="Texture2D" uid="uid://c2q388pcdbmai" path="res://Assets/Sprites/Tall Grass.png" id="2_mv4ex"]
+[ext_resource type="Texture2D" uid="uid://cb1mn81gy42n5" path="res://Assets/Sprites/Ant.png" id="3_qqpvo"]
+[ext_resource type="Texture2D" uid="uid://bxn6r557owwhi" path="res://Assets/Sprites/WhiteFlag.png" id="4_yq43k"]
+[ext_resource type="Texture2D" uid="uid://5yaffrvhcx0b" path="res://Assets/Sprites/MenuButton.png" id="6_xm4ab"]
+[ext_resource type="Texture2D" uid="uid://11iid6ddkoyl" path="res://Assets/Sprites/JamTheme/ThemeCard.png" id="7_fghlr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13yfo"]
+atlas = ExtResource("3_qqpvo")
+region = Rect2(0, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5tos"]
+atlas = ExtResource("3_qqpvo")
+region = Rect2(16, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc256"]
+atlas = ExtResource("3_qqpvo")
+region = Rect2(0, 8, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbd5a"]
+atlas = ExtResource("3_qqpvo")
+region = Rect2(16, 8, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yios8"]
+atlas = ExtResource("3_qqpvo")
+region = Rect2(0, 16, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jdg4"]
+atlas = ExtResource("3_qqpvo")
+region = Rect2(16, 16, 16, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ugxu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13yfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5tos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jc256")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbd5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yios8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jdg4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0rhh"]
+atlas = ExtResource("4_yq43k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qcx8"]
+atlas = ExtResource("4_yq43k")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ecfbb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0rhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qcx8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_ctoy4"]
+resource_name = "RunningAnts"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-201, 532), Vector2(1301, 532)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AntSprite2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-123, 634), Vector2(1474, 634)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AntSprite3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-457, 597), Vector2(1300, 597)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_356sb"]
+_data = {
+"RunningAnts": SubResource("Animation_ctoy4")
+}
+
+[sub_resource type="Animation" id="Animation_vsx8d"]
+resource_name = "antsRunning"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AntSprite4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-597, 488), Vector2(1400, 488)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AntSprite5:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-407, 559), Vector2(1350, 559)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AntSprite6:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-821, 586), Vector2(1400, 586)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_31dvt"]
+_data = {
+"antsRunning": SubResource("Animation_vsx8d")
+}
+
+[node name="Victory Screen" type="Control"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fqmjd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -112.0
+offset_right = 1243.0
+offset_bottom = 665.0
+color = Color(0.18359, 0.18359, 0.18359, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 41.0
+offset_right = 804.0
+offset_bottom = 151.0
+theme_override_colors/default_color = Color(0.849963, 0.609558, 0.280672, 1)
+theme_override_fonts/normal_font = ExtResource("1_dip1i")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "[wave] VICTORY!"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 198.0
+offset_right = 795.0
+offset_bottom = 369.0
+theme_override_fonts/font = ExtResource("1_dip1i")
+text = "YOU HAVE SUCCESSFULLY GUARDED YOUR NEW HOME AGAINST THE NUCLEAR ANTS.
+
+SEEING THAT YOUR LAWN IS FULLY MOWED, THE REMAINING ANTS RETURN TO THEIR NUCLEAR COLONY... UNTIL THE GRASS REGROWS?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TallGrass" type="Sprite2D" parent="."]
+position = Vector2(72, 545)
+scale = Vector2(10, 10)
+texture = ExtResource("2_mv4ex")
+
+[node name="TallGrass2" type="Sprite2D" parent="."]
+position = Vector2(228, 551)
+scale = Vector2(10, 10)
+texture = ExtResource("2_mv4ex")
+
+[node name="TallGrass3" type="Sprite2D" parent="."]
+position = Vector2(338, 546)
+scale = Vector2(10, 10)
+texture = ExtResource("2_mv4ex")
+
+[node name="TallGrass4" type="Sprite2D" parent="."]
+position = Vector2(396, 543)
+scale = Vector2(10, 10)
+texture = ExtResource("2_mv4ex")
+
+[node name="TallGrass5" type="Sprite2D" parent="."]
+position = Vector2(554, 558)
+scale = Vector2(10, 10)
+texture = ExtResource("2_mv4ex")
+
+[node name="TallGrass6" type="Sprite2D" parent="."]
+position = Vector2(711, 545)
+scale = Vector2(10, 10)
+texture = ExtResource("2_mv4ex")
+
+[node name="TallGrass7" type="Sprite2D" parent="."]
+position = Vector2(869, 550)
+scale = Vector2(10, 10)
+texture = ExtResource("2_mv4ex")
+
+[node name="TallGrass8" type="Sprite2D" parent="."]
+position = Vector2(1019, 546)
+scale = Vector2(10, 10)
+texture = ExtResource("2_mv4ex")
+
+[node name="TallGrass9" type="Sprite2D" parent="."]
+position = Vector2(1174, 546)
+scale = Vector2(10, 10)
+texture = ExtResource("2_mv4ex")
+
+[node name="AntSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(364.575, 532)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_4ugxu")
+autoplay = "default"
+frame_progress = 0.540998
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AntSprite"]
+position = Vector2(-2.6, -10.2)
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_ecfbb")
+autoplay = "default"
+frame_progress = 0.272608
+
+[node name="AntSprite2" type="AnimatedSprite2D" parent="."]
+position = Vector2(478.347, 634)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_4ugxu")
+autoplay = "default"
+frame_progress = 0.0495218
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AntSprite2"]
+position = Vector2(-2.6, -10.2)
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_ecfbb")
+autoplay = "default"
+frame_progress = 0.0144709
+
+[node name="AntSprite3" type="AnimatedSprite2D" parent="."]
+position = Vector2(204.594, 597)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_4ugxu")
+autoplay = "default"
+frame_progress = 0.452925
+
+[node name="AntSprite4" type="AnimatedSprite2D" parent="."]
+position = Vector2(1391.91, 488)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_4ugxu")
+autoplay = "default"
+frame_progress = 0.772546
+
+[node name="AntSprite5" type="AnimatedSprite2D" parent="."]
+position = Vector2(1342.88, 559)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_4ugxu")
+autoplay = "default"
+frame_progress = 0.718337
+
+[node name="AntSprite6" type="AnimatedSprite2D" parent="."]
+position = Vector2(1391, 586)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_4ugxu")
+autoplay = "default"
+frame_progress = 0.842688
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AntSprite")
+libraries = {
+"": SubResource("AnimationLibrary_356sb")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_31dvt")
+}
+
+[node name="ReplayButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 867.0
+offset_top = 220.0
+offset_right = 995.0
+offset_bottom = 284.0
+texture_normal = ExtResource("6_xm4ab")
+
+[node name="Label" type="Label" parent="ReplayButton"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 22.0
+offset_right = 128.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("1_dip1i")
+theme_override_font_sizes/font_size = 14
+text = "PLAY AGAIN"
+
+[node name="FadeTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="ThemeCard" type="Sprite2D" parent="."]
+position = Vector2(179, 140)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_fghlr")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 254.0
+offset_right = 330.0
+offset_bottom = 299.0
+theme_override_colors/font_color = Color(0.965332, 0.57931, 0.25104, 1)
+theme_override_fonts/font = ExtResource("1_dip1i")
+text = "ARTIST: SKAIAONTOAST
+PROGRAMMER: ALEX BELANGER"
+
+[connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]

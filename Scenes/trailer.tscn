@@ -55,25 +55,22 @@ size = Vector2(111, 11.25)
 size = Vector2(111, 19)
 
 [node name="Trailer" type="RigidBody2D"]
-visible = false
 z_index = 2
 collision_layer = 36
 collision_mask = 68
 gravity_scale = 0.0
-linear_damp = 15.97
+linear_damp = 34.707
 script = ExtResource("1_hpfr7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 19.5)
 shape = SubResource("RectangleShape2D_q6csx")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-7.62939e-06, 18.5)
+position = Vector2(3.55271e-15, 0)
 scale = Vector2(1.725, 1.55)
 sprite_frames = SubResource("SpriteFrames_yvwr4")
 animation = &"SuperTrailer"
 autoplay = "BasicTrailer"
-frame_progress = 0.235033
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
@@ -81,7 +78,7 @@ collision_mask = 2
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 27.625)
+position = Vector2(-0.250008, 0)
 shape = SubResource("RectangleShape2D_8lfsr")
 
 [node name="upgradesHitbox" type="Area2D" parent="."]
@@ -89,7 +86,7 @@ collision_layer = 36
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="upgradesHitbox"]
-position = Vector2(-0.5, 17.5)
+position = Vector2(-0.250008, 0)
 shape = SubResource("RectangleShape2D_e4y8b")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -181,9 +181,9 @@ offset_left = 318.5
 offset_top = -249.0
 offset_right = 350.5
 offset_bottom = -216.0
-texture_normal = ExtResource("2_fovqi")
-texture_pressed = ExtResource("3_v3yij")
-texture_hover = ExtResource("4_ey3ev")
+texture_normal = ExtResource("4_ey3ev")
+texture_pressed = ExtResource("2_fovqi")
+texture_hover = ExtResource("3_v3yij")
 
 [node name="SpeedUpgradeFrame" type="AnimatedSprite2D" parent="ColorRect"]
 position = Vector2(-281.5, -189)

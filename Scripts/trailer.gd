@@ -38,9 +38,9 @@ func upgrade(index:int):
 		sprite_2d.play("SuperTrailer")
 
 func garageReset(enabled:bool):
-	if !enabled:
-		rotation = PI
-		global_position.y = player.getRearHitch().y - 60
+	pass
+	#rotation = -PI
+	#global_position.y = player.getRearHitch().y - 60
 
 
 func _on_upgrades_hitbox_body_entered(body):
@@ -52,3 +52,5 @@ func hideTrailer(enabled:bool)->void:
 		visible = false
 	elif unlocked:
 		visible = true
+		rotation = -PI
+		global_position.y = player.getRearHitch().y - 60

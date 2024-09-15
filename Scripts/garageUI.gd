@@ -97,6 +97,7 @@ func _on_turn_speed_button_pressed():
 
 func _on_done_button_pressed():
 	SignalBus.garageUI.emit(false)
+	SignalBus.volume.emit(true)
 
 
 func _on_speed_button_mouse_entered():

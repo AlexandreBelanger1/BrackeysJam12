@@ -15,13 +15,14 @@ func _ready():
 	generateGrass(Vector2(80,80))
 	generateUpgrades()
 	SignalBus.upgradeUnlock.connect(enableTrailer)
+	SignalBus.volume.emit(false)
 	SignalBus.dialogueText.emit("Welcome to your new home!")
-	SignalBus.dialogueText.emit("It is a wonderful day to tidy up the yard that hasn't been mowed in years. Luckily, the previous tennants left a mower behind!")
+	SignalBus.dialogueText.emit("The yard hasn't been mowed in years. Luckily, the previous tennants left a mower behind!")
 	SignalBus.dialogueText.emit("Here are some instructions on how to use the mower:")
 	SignalBus.dialogueText.emit("Use the A and D keys to steer the mower left and right.")
 	SignalBus.dialogueText.emit("The mower will always move forward.")
-	SignalBus.dialogueText.emit("Your garage has tools to upgrade your mower if you find materials.")
-	SignalBus.dialogueText.emit("Relax, and enjoy mowing the lawn.")
+	SignalBus.dialogueText.emit("Upgrade your mower in the garage with parts that you find.")
+	SignalBus.dialogueText.emit("Relax, have a beer, and enjoy mowing the lawn.")
 	
 	
 	SignalBus.halfway.connect(enableStorm)
@@ -86,7 +87,11 @@ func enableTrailer(value:int)->void:
 		trailer.enable()
 
 func enableStorm():
-	SignalBus.dialogueText.emit("EMERGENCY ALERT: AN UNKNOWN SPECIES OF GIANT ANTS ARE INVADING THE AREA.")
-	SignalBus.dialogueText.emit("THEY APPEAR TO BE HEADING TO A HOUSE THAT NEEDS THEIR LAWN MOWED.")
-	SignalBus.dialogueText.emit("DO NOT ATTEMPT TO NEGOTIATE WITH THE ANTS. MOW YOUR LAWN.")
+	SignalBus.volume.emit(false)
+	SignalBus.dialogueText.emit("EMERGENCY ALERT: A WAVE OF GIANT, NUCLEAR ANTS ARE INVADING THE AREA.")
+	SignalBus.dialogueText.emit("THEY APPEAR TO BE HEADING TOWARDS YOUR NEW HOUSE.")
+	SignalBus.dialogueText.emit("RUN THE ANTS OVER AND SHOOT THEM DOWN BEFORE THEY DESTROY IT!")
+	SignalBus.dialogueText.emit("USE THE CANNONS BUILT INTO YOUR TRACTOR USING 'SPACEBAR' (press and hold).")
+	SignalBus.dialogueText.emit("THE ONLY WAY TO STOP THEM IS TO FINISH YOUR LAWN.")
+	SignalBus.dialogueText.emit("BEST OF LUCK!")
 

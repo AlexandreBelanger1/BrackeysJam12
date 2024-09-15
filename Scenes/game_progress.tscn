@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cn5kjn4rxvd0p"]
+[gd_scene load_steps=6 format=3 uid="uid://cn5kjn4rxvd0p"]
 
 [ext_resource type="Script" path="res://Scripts/GameProgress.gd" id="1_cqpag"]
+[ext_resource type="Texture2D" uid="uid://b0tkosalrgneq" path="res://Assets/Sprites/ProgressBarTexturesOver.png" id="2_ee0fu"]
+[ext_resource type="Texture2D" uid="uid://dmkjs0agqqh8h" path="res://Assets/Sprites/ProgressBarTexturesProgress.png" id="2_qk0j5"]
+[ext_resource type="Texture2D" uid="uid://tphr2dwi4h05" path="res://Assets/Sprites/ProgressBarTexturesBackground.png" id="3_766qn"]
+[ext_resource type="FontFile" uid="uid://vtp1crronryx" path="res://Assets/Fonts/Retro Gaming.ttf" id="5_ly7w3"]
 
 [node name="GameProgress" type="Control"]
+modulate = Color(1, 1, 1, 0.823529)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,10 +16,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cqpag")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_left = 248.0
 offset_top = 5.0
 offset_right = 796.0
 offset_bottom = 32.0
-step = 1.0
+value = 80.0
+fill_mode = 1
+texture_under = ExtResource("2_ee0fu")
+texture_over = ExtResource("2_qk0j5")
+texture_progress = ExtResource("3_766qn")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 10.0
+offset_right = 589.0
+offset_bottom = 37.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("5_ly7w3")
+theme_override_font_sizes/font_size = 21
+text = "PROGRESS"
