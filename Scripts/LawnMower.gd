@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var shoot_timer = $ShootTimer
 @onready var shoot_marker_left = $ShootMarkerLeft
 @onready var shoot_marker_right = $ShootMarkerRight
+@onready var engine_start = $EngineStart
 
 
 
@@ -42,6 +43,8 @@ func _ready():
 	SignalBus.upgradeUnlock.connect(upgrade)
 	SignalBus.garageUI.connect(garageReset)
 	SignalBus.halfway.connect(gunEnable)
+
+
 
 func _physics_process(delta):
 	direction = (front_bumper.global_position - rear_bumper.global_position).normalized()
@@ -139,7 +142,8 @@ func garageReset(enabled:bool):
 
 func _on_upgrades_hitbox_body_entered(body):
 	SignalBus.addPoints.emit(100)
-	body.queue_free()
+	body.obtain()
+	#body.queue_free()
 
 func getRearHitch():
 	return rear_bumper.global_position
@@ -164,3 +168,14 @@ func _on_shoot_timer_timeout():
 	shotR.rotation = rotation
 	SignalBus.shoot.emit()
 
+
+
+func _on_minimap_update_timeout():
+	SignalBus.playerPosition.emit(global_position,rotation)
+
+
+
+
+func _on_engine_start_timeout():
+	engine_sounds.play()
+	engine_start.stop()

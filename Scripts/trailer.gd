@@ -45,7 +45,7 @@ func garageReset(enabled:bool):
 
 func _on_upgrades_hitbox_body_entered(body):
 	SignalBus.addPoints.emit(100)
-	body.queue_free()
+	body.obtain()
 
 func hideTrailer(enabled:bool)->void:
 	if enabled:

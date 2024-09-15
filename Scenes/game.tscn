@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b12idb4ma5mm1"]
+[gd_scene load_steps=16 format=3 uid="uid://b12idb4ma5mm1"]
 
 [ext_resource type="PackedScene" uid="uid://bwxjf3dr75uq0" path="res://Scenes/tilemap.tscn" id="1_jinbg"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_mpyx1"]
@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://dvq7nl5xeioe3" path="res://Scenes/trailer.tscn" id="9_wxp64"]
 [ext_resource type="PackedScene" uid="uid://dj08v856b3r0j" path="res://Scenes/fence.tscn" id="11_ekimo"]
 [ext_resource type="Texture2D" uid="uid://dgouljl3cestk" path="res://Assets/Sprites/GrassDecal.png" id="12_bwfe8"]
+[ext_resource type="PackedScene" uid="uid://dfy04uchtupbv" path="res://Scenes/tree.tscn" id="13_d3f5w"]
 [ext_resource type="PackedScene" uid="uid://bj4eewpgajgu0" path="res://Scenes/ant_spawner.tscn" id="13_t1s0f"]
+[ext_resource type="Texture2D" uid="uid://cb7lo3jtkhp4r" path="res://Assets/Sprites/Berry Bush.png" id="14_lev87"]
+[ext_resource type="Texture2D" uid="uid://dw3gihdjbuxtf" path="res://Assets/Sprites/Small tree.png" id="15_8bly8"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -23,9 +26,9 @@ position = Vector2(416, -408)
 [node name="Camera" parent="." instance=ExtResource("2_0a7oh")]
 process_mode = 3
 position = Vector2(1362, 1314)
+randomStrength = 5.0
 
 [node name="UserInterface" parent="Camera" instance=ExtResource("4_sx5y1")]
-process_mode = 0
 offset_left = -565.0
 offset_top = -330.0
 offset_right = -565.0
@@ -146,3 +149,1627 @@ texture = ExtResource("12_bwfe8")
 
 [node name="AntSpawner" parent="." instance=ExtResource("13_t1s0f")]
 position = Vector2(1385, 1225)
+
+[node name="Tree" parent="." instance=ExtResource("13_d3f5w")]
+position = Vector2(559, 1928)
+
+[node name="Tree2" parent="." instance=ExtResource("13_d3f5w")]
+position = Vector2(2202, 2330)
+
+[node name="Tree3" parent="." instance=ExtResource("13_d3f5w")]
+position = Vector2(2266, 706)
+
+[node name="Tree4" parent="." instance=ExtResource("13_d3f5w")]
+position = Vector2(698, 357)
+
+[node name="BerryBush" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1443, 1240)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush2" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1549, 1239)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush3" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1512, 1240)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush4" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1306, 1240)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush5" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1282, 1242)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush6" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1350, 1242)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush7" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1226, 1240)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush8" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1053, 1240)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush9" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1032, 1241)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush10" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(751, 1241)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush11" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(739, 1248)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush12" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(723, 1238)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush13" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1229, 1213)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush14" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1230, 1178)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush15" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1229, 1154)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush16" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1228, 1130)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush17" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1228, 1109)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush18" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1230, 1075)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush19" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1554, 1210)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush20" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1553, 1181)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush21" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1553, 1149)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush22" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1553, 1127)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush23" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1530, 1121)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush24" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1054, 1216)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush25" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1056, 1185)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush26" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1056, 1156)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush27" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(722, 1210)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush28" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(723, 1188)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush29" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(722, 1162)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush30" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(723, 1144)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="BerryBush31" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(723, 1144)
+texture = ExtResource("14_lev87")
+offset = Vector2(0, -7)
+
+[node name="SmallTree" type="Sprite2D" parent="."]
+position = Vector2(-412, 2513)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree2" type="Sprite2D" parent="."]
+position = Vector2(-465, 2370)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree3" type="Sprite2D" parent="."]
+position = Vector2(-403, 2223)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree4" type="Sprite2D" parent="."]
+position = Vector2(-477, 2114)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree5" type="Sprite2D" parent="."]
+position = Vector2(-403, 1935)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree6" type="Sprite2D" parent="."]
+position = Vector2(-484, 1750)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree7" type="Sprite2D" parent="."]
+position = Vector2(-387, 1606)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree8" type="Sprite2D" parent="."]
+position = Vector2(-445, 1500)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree9" type="Sprite2D" parent="."]
+position = Vector2(-396, 1345)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree10" type="Sprite2D" parent="."]
+position = Vector2(-508, 1226)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree11" type="Sprite2D" parent="."]
+position = Vector2(-561, 1376)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree12" type="Sprite2D" parent="."]
+position = Vector2(-580, 1576)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree13" type="Sprite2D" parent="."]
+position = Vector2(-578, 1897)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree14" type="Sprite2D" parent="."]
+position = Vector2(-604, 1765)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree15" type="Sprite2D" parent="."]
+position = Vector2(-570, 2052)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree16" type="Sprite2D" parent="."]
+position = Vector2(-574, 2229)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree17" type="Sprite2D" parent="."]
+position = Vector2(-565, 2364)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree18" type="Sprite2D" parent="."]
+position = Vector2(-545, 2501)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree19" type="Sprite2D" parent="."]
+position = Vector2(-371, 1238)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree20" type="Sprite2D" parent="."]
+position = Vector2(-419, 1056)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree21" type="Sprite2D" parent="."]
+position = Vector2(-536, 928)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree22" type="Sprite2D" parent="."]
+position = Vector2(-560, 1096)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree23" type="Sprite2D" parent="."]
+position = Vector2(-412, 907)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree24" type="Sprite2D" parent="."]
+position = Vector2(-412, 730)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree25" type="Sprite2D" parent="."]
+position = Vector2(-499, 805)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree26" type="Sprite2D" parent="."]
+position = Vector2(-532, 655)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree27" type="Sprite2D" parent="."]
+position = Vector2(-409, 601)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree28" type="Sprite2D" parent="."]
+position = Vector2(-535, 526)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree29" type="Sprite2D" parent="."]
+position = Vector2(-409, 472)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree30" type="Sprite2D" parent="."]
+position = Vector2(-412, 345)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree31" type="Sprite2D" parent="."]
+position = Vector2(-550, 423)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree32" type="Sprite2D" parent="."]
+position = Vector2(-436, 192)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree33" type="Sprite2D" parent="."]
+position = Vector2(-553, 279)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree34" type="Sprite2D" parent="."]
+position = Vector2(-502, 21)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree35" type="Sprite2D" parent="."]
+position = Vector2(-373, 60)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree36" type="Sprite2D" parent="."]
+position = Vector2(-385, -90)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree37" type="Sprite2D" parent="."]
+position = Vector2(-541, -186)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree38" type="Sprite2D" parent="."]
+position = Vector2(-616, 84)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree39" type="Sprite2D" parent="."]
+position = Vector2(-316, -210)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree40" type="Sprite2D" parent="."]
+position = Vector2(-142, -186)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree41" type="Sprite2D" parent="."]
+position = Vector2(-115, -282)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree42" type="Sprite2D" parent="."]
+position = Vector2(95, -222)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree43" type="Sprite2D" parent="."]
+position = Vector2(239, -282)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree44" type="Sprite2D" parent="."]
+position = Vector2(335, -210)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree45" type="Sprite2D" parent="."]
+position = Vector2(494, -219)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree46" type="Sprite2D" parent="."]
+position = Vector2(410, -387)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree47" type="Sprite2D" parent="."]
+position = Vector2(683, -255)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree48" type="Sprite2D" parent="."]
+position = Vector2(596, -417)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree49" type="Sprite2D" parent="."]
+position = Vector2(881, -273)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree53" type="Sprite2D" parent="."]
+position = Vector2(629, -408)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree50" type="Sprite2D" parent="."]
+position = Vector2(593, -456)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree51" type="Sprite2D" parent="."]
+position = Vector2(668, -420)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree52" type="Sprite2D" parent="."]
+position = Vector2(668, -420)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree54" type="Sprite2D" parent="."]
+position = Vector2(57, -372)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree55" type="Sprite2D" parent="."]
+position = Vector2(821, -183)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree56" type="Sprite2D" parent="."]
+position = Vector2(1037, -192)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree57" type="Sprite2D" parent="."]
+position = Vector2(1205, -174)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree58" type="Sprite2D" parent="."]
+position = Vector2(618, -177)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree59" type="Sprite2D" parent="."]
+position = Vector2(213, -171)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree60" type="Sprite2D" parent="."]
+position = Vector2(-6, -177)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree61" type="Sprite2D" parent="."]
+position = Vector2(1339, -171)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree62" type="Sprite2D" parent="."]
+position = Vector2(1441, -198)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree63" type="Sprite2D" parent="."]
+position = Vector2(1597, -171)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree64" type="Sprite2D" parent="."]
+position = Vector2(1729, -198)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree65" type="Sprite2D" parent="."]
+position = Vector2(1840, -174)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree66" type="Sprite2D" parent="."]
+position = Vector2(2020, -210)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree67" type="Sprite2D" parent="."]
+position = Vector2(2185, -183)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree68" type="Sprite2D" parent="."]
+position = Vector2(2296, -180)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree69" type="Sprite2D" parent="."]
+position = Vector2(2296, -180)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree70" type="Sprite2D" parent="."]
+position = Vector2(2443, -213)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree71" type="Sprite2D" parent="."]
+position = Vector2(2383, -312)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree72" type="Sprite2D" parent="."]
+position = Vector2(2182, -309)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree73" type="Sprite2D" parent="."]
+position = Vector2(1969, -339)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree74" type="Sprite2D" parent="."]
+position = Vector2(1858, -312)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree75" type="Sprite2D" parent="."]
+position = Vector2(1670, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree76" type="Sprite2D" parent="."]
+position = Vector2(1547, -294)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree77" type="Sprite2D" parent="."]
+position = Vector2(1547, -294)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree78" type="Sprite2D" parent="."]
+position = Vector2(1397, -351)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree79" type="Sprite2D" parent="."]
+position = Vector2(1280, -294)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree80" type="Sprite2D" parent="."]
+position = Vector2(1178, -294)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree81" type="Sprite2D" parent="."]
+position = Vector2(989, -399)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree82" type="Sprite2D" parent="."]
+position = Vector2(800, -396)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree83" type="Sprite2D" parent="."]
+position = Vector2(539, -309)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree84" type="Sprite2D" parent="."]
+position = Vector2(260, -405)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree85" type="Sprite2D" parent="."]
+position = Vector2(-118, -384)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree86" type="Sprite2D" parent="."]
+position = Vector2(-310, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree87" type="Sprite2D" parent="."]
+position = Vector2(-436, -285)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree88" type="Sprite2D" parent="."]
+position = Vector2(-637, -72)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree89" type="Sprite2D" parent="."]
+position = Vector2(2563, -174)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree90" type="Sprite2D" parent="."]
+position = Vector2(2716, -186)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree91" type="Sprite2D" parent="."]
+position = Vector2(2575, -285)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree92" type="Sprite2D" parent="."]
+position = Vector2(2779, -348)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree93" type="Sprite2D" parent="."]
+position = Vector2(2812, -126)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree94" type="Sprite2D" parent="."]
+position = Vector2(2935, 57)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree95" type="Sprite2D" parent="."]
+position = Vector2(2857, 162)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree96" type="Sprite2D" parent="."]
+position = Vector2(2848, 3)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree97" type="Sprite2D" parent="."]
+position = Vector2(2977, -108)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree98" type="Sprite2D" parent="."]
+position = Vector2(3070, 108)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree99" type="Sprite2D" parent="."]
+position = Vector2(2992, 264)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree100" type="Sprite2D" parent="."]
+position = Vector2(3130, 336)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree101" type="Sprite2D" parent="."]
+position = Vector2(2893, 393)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree102" type="Sprite2D" parent="."]
+position = Vector2(2863, 585)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree103" type="Sprite2D" parent="."]
+position = Vector2(3058, 498)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree104" type="Sprite2D" parent="."]
+position = Vector2(3028, 606)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree105" type="Sprite2D" parent="."]
+position = Vector2(3073, 751)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree106" type="Sprite2D" parent="."]
+position = Vector2(2881, 745)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree107" type="Sprite2D" parent="."]
+position = Vector2(2989, 847)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree108" type="Sprite2D" parent="."]
+position = Vector2(2908, 952)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree109" type="Sprite2D" parent="."]
+position = Vector2(2893, 505)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree110" type="Sprite2D" parent="."]
+position = Vector2(3085, 250)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree111" type="Sprite2D" parent="."]
+position = Vector2(3124, 441)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree112" type="Sprite2D" parent="."]
+position = Vector2(3187, 636)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree113" type="Sprite2D" parent="."]
+position = Vector2(2836, 1094)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree114" type="Sprite2D" parent="."]
+position = Vector2(2893, 1259)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree115" type="Sprite2D" parent="."]
+position = Vector2(2864, 1425)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree116" type="Sprite2D" parent="."]
+position = Vector2(2872, 1612)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree117" type="Sprite2D" parent="."]
+position = Vector2(2968, 1519)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree118" type="Sprite2D" parent="."]
+position = Vector2(3011, 1295)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree119" type="Sprite2D" parent="."]
+position = Vector2(3059, 1436)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree120" type="Sprite2D" parent="."]
+position = Vector2(3035, 1134)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree121" type="Sprite2D" parent="."]
+position = Vector2(3099, 979)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree122" type="Sprite2D" parent="."]
+position = Vector2(3208, 1166)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree123" type="Sprite2D" parent="."]
+position = Vector2(3197, 883)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree124" type="Sprite2D" parent="."]
+position = Vector2(2882, 1788)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree125" type="Sprite2D" parent="."]
+position = Vector2(2879, 1951)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree126" type="Sprite2D" parent="."]
+position = Vector2(2989, 1903)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree127" type="Sprite2D" parent="."]
+position = Vector2(3045, 1711)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree128" type="Sprite2D" parent="."]
+position = Vector2(3004, 2106)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree129" type="Sprite2D" parent="."]
+position = Vector2(2872, 2133)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree130" type="Sprite2D" parent="."]
+position = Vector2(2854, 2291)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree131" type="Sprite2D" parent="."]
+position = Vector2(2969, 2250)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree132" type="Sprite2D" parent="."]
+position = Vector2(3079, 2321)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree133" type="Sprite2D" parent="."]
+position = Vector2(3003, 2441)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree134" type="Sprite2D" parent="."]
+position = Vector2(2851, 2501)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree135" type="Sprite2D" parent="."]
+position = Vector2(2824, 2677)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree136" type="Sprite2D" parent="."]
+position = Vector2(2998, 2661)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree137" type="Sprite2D" parent="."]
+position = Vector2(2944, 2830)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree138" type="Sprite2D" parent="."]
+position = Vector2(3141, 2773)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree139" type="Sprite2D" parent="."]
+position = Vector2(3224, 2614)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree140" type="Sprite2D" parent="."]
+position = Vector2(3151, 2522)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree141" type="Sprite2D" parent="."]
+position = Vector2(3260, 2408)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree142" type="Sprite2D" parent="."]
+position = Vector2(3182, 2315)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree143" type="Sprite2D" parent="."]
+position = Vector2(3106, 2159)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree144" type="Sprite2D" parent="."]
+position = Vector2(3289, 2230)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree145" type="Sprite2D" parent="."]
+position = Vector2(3206, 2055)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree146" type="Sprite2D" parent="."]
+position = Vector2(3154, 1980)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree147" type="Sprite2D" parent="."]
+position = Vector2(3206, 1889)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree148" type="Sprite2D" parent="."]
+position = Vector2(3153, 1805)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree149" type="Sprite2D" parent="."]
+position = Vector2(3238, 1664)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree150" type="Sprite2D" parent="."]
+position = Vector2(3102, 1568)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree151" type="Sprite2D" parent="."]
+position = Vector2(3250, 1475)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree152" type="Sprite2D" parent="."]
+position = Vector2(3174, 1328)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree153" type="Sprite2D" parent="."]
+position = Vector2(3346, 1309)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree154" type="Sprite2D" parent="."]
+position = Vector2(3270, 1048)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree155" type="Sprite2D" parent="."]
+position = Vector2(2689, 2747)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree156" type="Sprite2D" parent="."]
+position = Vector2(2525, 2776)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree157" type="Sprite2D" parent="."]
+position = Vector2(2203, 2757)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree158" type="Sprite2D" parent="."]
+position = Vector2(2416, 2950)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree159" type="Sprite2D" parent="."]
+position = Vector2(1869, 2843)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree160" type="Sprite2D" parent="."]
+position = Vector2(1427, 2746)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree161" type="Sprite2D" parent="."]
+position = Vector2(1645, 2928)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree162" type="Sprite2D" parent="."]
+position = Vector2(1493, 3025)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree163" type="Sprite2D" parent="."]
+position = Vector2(840, 2787)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree164" type="Sprite2D" parent="."]
+position = Vector2(417, 3074)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree165" type="Sprite2D" parent="."]
+position = Vector2(555, 2751)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree166" type="Sprite2D" parent="."]
+position = Vector2(191, 2773)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree167" type="Sprite2D" parent="."]
+position = Vector2(-184, 2726)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree168" type="Sprite2D" parent="."]
+position = Vector2(-346, 2928)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree169" type="Sprite2D" parent="."]
+position = Vector2(-357, 2710)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree170" type="Sprite2D" parent="."]
+position = Vector2(-552, 2710)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree171" type="Sprite2D" parent="."]
+position = Vector2(-552, 2961)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree172" type="Sprite2D" parent="."]
+position = Vector2(-130, 2921)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree173" type="Sprite2D" parent="."]
+position = Vector2(-260, 3128)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree174" type="Sprite2D" parent="."]
+position = Vector2(-2, 2778)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree175" type="Sprite2D" parent="."]
+position = Vector2(74, 3034)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree176" type="Sprite2D" parent="."]
+position = Vector2(281, 2971)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree177" type="Sprite2D" parent="."]
+position = Vector2(364, 2758)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree178" type="Sprite2D" parent="."]
+position = Vector2(523, 2958)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree179" type="Sprite2D" parent="."]
+position = Vector2(687, 2772)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree180" type="Sprite2D" parent="."]
+position = Vector2(725, 3023)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree181" type="Sprite2D" parent="."]
+position = Vector2(801, 2922)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree182" type="Sprite2D" parent="."]
+position = Vector2(402, 2877)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree193" type="Sprite2D" parent="."]
+position = Vector2(109, 2885)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree194" type="Sprite2D" parent="."]
+position = Vector2(-253, 2845)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree195" type="Sprite2D" parent="."]
+position = Vector2(-453, 2897)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree196" type="Sprite2D" parent="."]
+position = Vector2(-484, 2614)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree197" type="Sprite2D" parent="."]
+position = Vector2(-662, 2564)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree198" type="Sprite2D" parent="."]
+position = Vector2(-724, 2374)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree199" type="Sprite2D" parent="."]
+position = Vector2(-820, 2229)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree200" type="Sprite2D" parent="."]
+position = Vector2(-700, 2210)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree201" type="Sprite2D" parent="."]
+position = Vector2(-731, 2032)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree202" type="Sprite2D" parent="."]
+position = Vector2(-717, 1851)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree203" type="Sprite2D" parent="."]
+position = Vector2(-805, 1715)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree204" type="Sprite2D" parent="."]
+position = Vector2(-707, 1629)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree205" type="Sprite2D" parent="."]
+position = Vector2(-805, 1389)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree206" type="Sprite2D" parent="."]
+position = Vector2(-650, 1456)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree207" type="Sprite2D" parent="."]
+position = Vector2(-712, 1275)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree208" type="Sprite2D" parent="."]
+position = Vector2(-634, 1182)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree209" type="Sprite2D" parent="."]
+position = Vector2(-765, 1115)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree210" type="Sprite2D" parent="."]
+position = Vector2(-682, 1006)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree211" type="Sprite2D" parent="."]
+position = Vector2(-820, 744)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree212" type="Sprite2D" parent="."]
+position = Vector2(-646, 863)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree213" type="Sprite2D" parent="."]
+position = Vector2(-644, 706)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree214" type="Sprite2D" parent="."]
+position = Vector2(-765, 597)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree215" type="Sprite2D" parent="."]
+position = Vector2(-670, 535)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree216" type="Sprite2D" parent="."]
+position = Vector2(-733, 357)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree217" type="Sprite2D" parent="."]
+position = Vector2(-652, 300)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree218" type="Sprite2D" parent="."]
+position = Vector2(-752, 134)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree219" type="Sprite2D" parent="."]
+position = Vector2(-823, -23)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree223" type="Sprite2D" parent="."]
+position = Vector2(-702, -204)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree224" type="Sprite2D" parent="."]
+position = Vector2(-610, -353)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree225" type="Sprite2D" parent="."]
+position = Vector2(-490, -407)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree226" type="Sprite2D" parent="."]
+position = Vector2(-715, -420)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree227" type="Sprite2D" parent="."]
+position = Vector2(-731, -353)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree228" type="Sprite2D" parent="."]
+position = Vector2(-848, -282)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree229" type="Sprite2D" parent="."]
+position = Vector2(-861, -159)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree230" type="Sprite2D" parent="."]
+position = Vector2(2644, -378)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree231" type="Sprite2D" parent="."]
+position = Vector2(2885, -232)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree232" type="Sprite2D" parent="."]
+position = Vector2(3025, -321)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree233" type="Sprite2D" parent="."]
+position = Vector2(3114, -184)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree234" type="Sprite2D" parent="."]
+position = Vector2(2927, -378)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree235" type="Sprite2D" parent="."]
+position = Vector2(3137, 19)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree236" type="Sprite2D" parent="."]
+position = Vector2(3264, -102)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree237" type="Sprite2D" parent="."]
+position = Vector2(3261, 155)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree238" type="Sprite2D" parent="."]
+position = Vector2(3321, 66)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree239" type="Sprite2D" parent="."]
+position = Vector2(3308, 349)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree240" type="Sprite2D" parent="."]
+position = Vector2(3314, 568)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree241" type="Sprite2D" parent="."]
+position = Vector2(3355, 778)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree242" type="Sprite2D" parent="."]
+position = Vector2(3417, 979)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree243" type="Sprite2D" parent="."]
+position = Vector2(3436, 1195)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree244" type="Sprite2D" parent="."]
+position = Vector2(3433, 1503)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree245" type="Sprite2D" parent="."]
+position = Vector2(3420, 1722)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree246" type="Sprite2D" parent="."]
+position = Vector2(3369, 1862)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree247" type="Sprite2D" parent="."]
+position = Vector2(3398, 2018)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree248" type="Sprite2D" parent="."]
+position = Vector2(3430, 2205)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree249" type="Sprite2D" parent="."]
+position = Vector2(3443, 2462)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree250" type="Sprite2D" parent="."]
+position = Vector2(1259, 2789)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree251" type="Sprite2D" parent="."]
+position = Vector2(-649, 2900)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree252" type="Sprite2D" parent="."]
+position = Vector2(-547, 3129)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree253" type="Sprite2D" parent="."]
+position = Vector2(-725, 3027)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree254" type="Sprite2D" parent="."]
+position = Vector2(-693, 3164)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree255" type="Sprite2D" parent="."]
+position = Vector2(-823, 2866)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree256" type="Sprite2D" parent="."]
+position = Vector2(-683, 2764)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree257" type="Sprite2D" parent="."]
+position = Vector2(-877, 2697)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree258" type="Sprite2D" parent="."]
+position = Vector2(-785, 2586)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree259" type="Sprite2D" parent="."]
+position = Vector2(-852, 2472)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree260" type="Sprite2D" parent="."]
+position = Vector2(-957, 2366)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree261" type="Sprite2D" parent="."]
+position = Vector2(-1017, 2633)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree262" type="Sprite2D" parent="."]
+position = Vector2(-1049, 2239)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree263" type="Sprite2D" parent="."]
+position = Vector2(-1100, 2483)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree264" type="Sprite2D" parent="."]
+position = Vector2(-957, 2089)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree265" type="Sprite2D" parent="."]
+position = Vector2(-916, 1867)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree266" type="Sprite2D" parent="."]
+position = Vector2(-891, 2019)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree267" type="Sprite2D" parent="."]
+position = Vector2(-1075, 1984)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree268" type="Sprite2D" parent="."]
+position = Vector2(-1192, 2181)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree269" type="Sprite2D" parent="."]
+position = Vector2(-986, 1717)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree270" type="Sprite2D" parent="."]
+position = Vector2(-821, 1574)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree271" type="Sprite2D" parent="."]
+position = Vector2(-970, 1466)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree272" type="Sprite2D" parent="."]
+position = Vector2(-829, 925)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree273" type="Sprite2D" parent="."]
+position = Vector2(-934, 1185)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree274" type="Sprite2D" parent="."]
+position = Vector2(-982, 1023)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree275" type="Sprite2D" parent="."]
+position = Vector2(-912, 474)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree276" type="Sprite2D" parent="."]
+position = Vector2(-960, 747)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree277" type="Sprite2D" parent="."]
+position = Vector2(-919, 309)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree278" type="Sprite2D" parent="."]
+position = Vector2(-913, 134)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree279" type="Sprite2D" parent="."]
+position = Vector2(-913, 134)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree220" type="Sprite2D" parent="."]
+position = Vector2(1176, -410)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree221" type="Sprite2D" parent="."]
+position = Vector2(2126, -344)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree222" type="Sprite2D" parent="."]
+position = Vector2(2126, -344)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree183" type="Sprite2D" parent="."]
+position = Vector2(1354, 2886)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree184" type="Sprite2D" parent="."]
+position = Vector2(883, 3078)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree185" type="Sprite2D" parent="."]
+position = Vector2(1588, 2819)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree186" type="Sprite2D" parent="."]
+position = Vector2(1866, 3005)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree187" type="Sprite2D" parent="."]
+position = Vector2(1754, 2763)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree188" type="Sprite2D" parent="."]
+position = Vector2(2039, 2902)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree189" type="Sprite2D" parent="."]
+position = Vector2(1999, 2796)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree190" type="Sprite2D" parent="."]
+position = Vector2(2257, 2998)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree191" type="Sprite2D" parent="."]
+position = Vector2(2311, 2825)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")
+
+[node name="SmallTree192" type="Sprite2D" parent="."]
+position = Vector2(2311, 2825)
+scale = Vector2(4, 4)
+texture = ExtResource("15_8bly8")

@@ -18,5 +18,5 @@ func removeGrass():
 		SignalBus.halfway.emit()
 		halfwayFlag = true
 	
-	if progress_bar.value <= 5:
+	if progress_bar.value <= 2:
 		SignalBus.winGame.emit()

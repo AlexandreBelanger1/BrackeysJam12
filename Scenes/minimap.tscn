@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://buq8gu885q4xw"]
+[gd_scene load_steps=6 format=3 uid="uid://buq8gu885q4xw"]
 
 [ext_resource type="Script" path="res://Scripts/Minimap.gd" id="1_48olt"]
 [ext_resource type="Texture2D" uid="uid://dld5cs34d6x8p" path="res://Assets/Sprites/MinimapHouse.png" id="2_6l165"]
 [ext_resource type="Texture2D" uid="uid://t6dd4v3xpfe0" path="res://Assets/Sprites/MinimapBarn.png" id="3_ypoh5"]
 [ext_resource type="Texture2D" uid="uid://l4b1b5oh5mty" path="res://Assets/Sprites/MinimapBackgroun.png" id="4_iy0k0"]
+[ext_resource type="Texture2D" uid="uid://b1pjvd53j5nq3" path="res://Assets/Sprites/minimapPlayerSprite.png" id="5_e5iku"]
 
 [node name="Minimap" type="Control"]
 z_index = 4
@@ -47,3 +48,8 @@ texture = ExtResource("3_ypoh5")
 modulate = Color(1, 1, 1, 0.572549)
 position = Vector2(1079, 63)
 texture = ExtResource("4_iy0k0")
+
+[node name="MinimapPlayerSprite" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(1076, 63)
+texture = ExtResource("5_e5iku")

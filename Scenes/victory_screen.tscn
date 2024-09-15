@@ -1,11 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://b4qg11my7urj1"]
+[gd_scene load_steps=21 format=3 uid="uid://b4qg11my7urj1"]
 
 [ext_resource type="FontFile" uid="uid://vtp1crronryx" path="res://Assets/Fonts/Retro Gaming.ttf" id="1_dip1i"]
 [ext_resource type="Script" path="res://Scripts/victory_screen.gd" id="1_fqmjd"]
 [ext_resource type="Texture2D" uid="uid://c2q388pcdbmai" path="res://Assets/Sprites/Tall Grass.png" id="2_mv4ex"]
 [ext_resource type="Texture2D" uid="uid://cb1mn81gy42n5" path="res://Assets/Sprites/Ant.png" id="3_qqpvo"]
 [ext_resource type="Texture2D" uid="uid://bxn6r557owwhi" path="res://Assets/Sprites/WhiteFlag.png" id="4_yq43k"]
-[ext_resource type="Texture2D" uid="uid://5yaffrvhcx0b" path="res://Assets/Sprites/MenuButton.png" id="6_xm4ab"]
 [ext_resource type="Texture2D" uid="uid://11iid6ddkoyl" path="res://Assets/Sprites/JamTheme/ThemeCard.png" id="7_fghlr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13yfo"]
@@ -262,7 +261,7 @@ scale = Vector2(10, 10)
 texture = ExtResource("2_mv4ex")
 
 [node name="AntSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(364.575, 532)
+position = Vector2(6.77669, 532)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_4ugxu")
 autoplay = "default"
@@ -276,7 +275,7 @@ autoplay = "default"
 frame_progress = 0.272608
 
 [node name="AntSprite2" type="AnimatedSprite2D" parent="."]
-position = Vector2(478.347, 634)
+position = Vector2(97.9183, 634)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_4ugxu")
 autoplay = "default"
@@ -290,28 +289,28 @@ autoplay = "default"
 frame_progress = 0.0144709
 
 [node name="AntSprite3" type="AnimatedSprite2D" parent="."]
-position = Vector2(204.594, 597)
+position = Vector2(-213.948, 597)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_4ugxu")
 autoplay = "default"
 frame_progress = 0.452925
 
 [node name="AntSprite4" type="AnimatedSprite2D" parent="."]
-position = Vector2(1391.91, 488)
+position = Vector2(-213.136, 488)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_4ugxu")
 autoplay = "default"
 frame_progress = 0.772546
 
 [node name="AntSprite5" type="AnimatedSprite2D" parent="."]
-position = Vector2(1342.88, 559)
+position = Vector2(-69.269, 559)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_4ugxu")
 autoplay = "default"
 frame_progress = 0.718337
 
 [node name="AntSprite6" type="AnimatedSprite2D" parent="."]
-position = Vector2(1391, 586)
+position = Vector2(-394.079, 586)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_4ugxu")
 autoplay = "default"
@@ -328,23 +327,19 @@ libraries = {
 "": SubResource("AnimationLibrary_31dvt")
 }
 
-[node name="ReplayButton" type="TextureButton" parent="."]
+[node name="ReplayButton" type="LinkButton" parent="."]
 layout_mode = 0
 offset_left = 867.0
 offset_top = 220.0
 offset_right = 995.0
 offset_bottom = 284.0
-texture_normal = ExtResource("6_xm4ab")
-
-[node name="Label" type="Label" parent="ReplayButton"]
-layout_mode = 0
-offset_left = 13.0
-offset_top = 22.0
-offset_right = 128.0
-offset_bottom = 45.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.301229, 0.823723, 0.85295, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0.607843, 0.282353, 1)
 theme_override_fonts/font = ExtResource("1_dip1i")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 32
 text = "PLAY AGAIN"
+underline = 2
 
 [node name="FadeTimer" type="Timer" parent="."]
 wait_time = 0.1
@@ -356,14 +351,14 @@ texture = ExtResource("7_fghlr")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 33.0
+offset_left = 32.0
 offset_top = 254.0
-offset_right = 330.0
+offset_right = 329.0
 offset_bottom = 299.0
-theme_override_colors/font_color = Color(0.965332, 0.57931, 0.25104, 1)
+theme_override_colors/font_color = Color(0.85098, 0.607843, 0.282353, 1)
 theme_override_fonts/font = ExtResource("1_dip1i")
-text = "ARTIST: SKAIAONTOAST
-PROGRAMMER: ALEX BELANGER"
+text = "ARTIST: @magmakingagame
+PROGRAMMER: Alex Belanger"
 
 [connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
 [connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]

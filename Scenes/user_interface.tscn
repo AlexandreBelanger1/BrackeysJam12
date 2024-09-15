@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://sam6rfrau4vk"]
+[gd_scene load_steps=14 format=3 uid="uid://sam6rfrau4vk"]
 
 [ext_resource type="Script" path="res://Scripts/UserInterface.gd" id="1_48x6f"]
+[ext_resource type="Texture2D" uid="uid://plfr6x5dhvad" path="res://Assets/Sprites/VolumeButton-1.png" id="2_d4ixt"]
 [ext_resource type="PackedScene" uid="uid://h41wx86oj4jg" path="res://Scenes/garage_player_ui.tscn" id="2_jweu5"]
 [ext_resource type="FontFile" uid="uid://vtp1crronryx" path="res://Assets/Fonts/Retro Gaming.ttf" id="2_v88ma"]
 [ext_resource type="PackedScene" uid="uid://cwoseguj8cs3g" path="res://Scenes/dialogue_box.tscn" id="3_ykji8"]
@@ -11,9 +12,9 @@
 [ext_resource type="AudioStream" uid="uid://bx12fj002iomg" path="res://Assets/Audio/mainTheme.wav" id="9_mn1ls"]
 [ext_resource type="PackedScene" uid="uid://dimclqvbmeysc" path="res://Scenes/wave_progress_bar.tscn" id="10_q87m4"]
 [ext_resource type="PackedScene" uid="uid://b4qg11my7urj1" path="res://Scenes/victory_screen.tscn" id="11_wx7ln"]
+[ext_resource type="PackedScene" uid="uid://baohb1ng5k5kn" path="res://Scenes/volume_slider.tscn" id="12_i0gow"]
 
 [node name="UserInterface" type="Control"]
-process_mode = 3
 z_index = 4
 layout_mode = 3
 anchors_preset = 15
@@ -23,13 +24,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_48x6f")
 
+[node name="VolumeButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1103.0
+offset_top = 212.0
+offset_right = 1135.0
+offset_bottom = 244.0
+texture_normal = ExtResource("2_d4ixt")
+
 [node name="ScoreLabel" type="Label" parent="."]
 z_index = 5
 layout_mode = 0
 offset_left = 37.0
-offset_top = 10.0
+offset_top = 17.0
 offset_right = 131.0
-offset_bottom = 33.0
+offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("2_v88ma")
 
 [node name="garagePlayerUI" parent="." instance=ExtResource("2_jweu5")]
@@ -72,20 +81,40 @@ offset_top = 43.0
 offset_right = 307.0
 offset_bottom = 43.0
 
-[node name="GameOverButton" type="Button" parent="."]
+[node name="GameOverButton" type="LinkButton" parent="."]
 process_mode = 3
 visible = false
 z_index = 4
 layout_mode = 0
-offset_left = 375.0
-offset_top = 443.0
-offset_right = 656.0
-offset_bottom = 619.0
-text = "GAME OVER
-(TRY AGAIN?)"
+offset_left = 451.0
+offset_top = 198.0
+offset_right = 696.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0655797, 0.769212, 0.912313, 1)
+theme_override_colors/font_hover_color = Color(0.941583, 0.645836, 0.402553, 1)
+theme_override_fonts/font = ExtResource("2_v88ma")
+theme_override_font_sizes/font_size = 64
+text = "
+RETRY"
+underline = 2
+
+[node name="Label" type="Label" parent="GameOverButton"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -31.0
+offset_right = 279.0
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_v88ma")
+text = "NUCLEAR ANTS ATE YOUR HOUSE"
 
 [node name="Gear" type="Sprite2D" parent="."]
-position = Vector2(19, 19)
+position = Vector2(19, 27)
+scale = Vector2(2, 2)
 texture = ExtResource("8_cva36")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -115,4 +144,13 @@ offset_top = 35.0
 offset_right = -17.0
 offset_bottom = 35.0
 
+[node name="VolumeSlider" parent="." instance=ExtResource("12_i0gow")]
+visible = false
+layout_mode = 1
+offset_left = 834.0
+offset_top = 208.0
+offset_right = 834.0
+offset_bottom = 208.0
+
+[connection signal="pressed" from="VolumeButton" to="." method="_on_volume_button_pressed"]
 [connection signal="pressed" from="GameOverButton" to="." method="_on_game_over_button_pressed"]

@@ -4,6 +4,7 @@ extends Control
 @onready var game_over_button = $GameOverButton
 @onready var victory_screen = $"Victory Screen"
 @onready var audio_stream_player = $AudioStreamPlayer
+@onready var volume_slider = $VolumeSlider
 
 
 var volumeDB = 0
@@ -58,3 +59,7 @@ func volume(enabled:bool):
 		volumeDB = -80.0
 		set_physics_process(true)
 
+
+
+func _on_volume_button_pressed():
+	volume_slider.visible = !volume_slider.visible

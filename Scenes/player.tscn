@@ -86,9 +86,10 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jif76"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_taqd5"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6wwnw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spyrb"]
+size = Vector2(29, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plib4"]
 size = Vector2(2.5, 63.25)
@@ -96,7 +97,8 @@ size = Vector2(2.5, 63.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs3x3"]
 size = Vector2(3, 63)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2tl5e"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbcpm"]
+size = Vector2(29, 20)
 
 [node name="Player" type="CharacterBody2D"]
 process_mode = 1
@@ -108,20 +110,20 @@ script = ExtResource("1_mp85h")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_8mkxv")
-animation = &"SuperTractorGun"
+animation = &"decentTractor"
 autoplay = "decentTractor"
-frame_progress = 0.682103
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_jif76")
+position = Vector2(-0.25, 0)
+shape = SubResource("CircleShape2D_taqd5")
 
 [node name="CollectionHitbox" type="Area2D" parent="."]
-rotation = 0.00212234
 collision_layer = 4
 collision_mask = 2
 
 [node name="MowerSize" type="CollisionShape2D" parent="CollectionHitbox"]
-shape = SubResource("CircleShape2D_6wwnw")
+position = Vector2(1.62125e-05, 0)
+shape = SubResource("RectangleShape2D_spyrb")
 
 [node name="FrontBumper" type="Marker2D" parent="."]
 position = Vector2(16, 0)
@@ -149,14 +151,14 @@ shape = SubResource("RectangleShape2D_cs3x3")
 
 [node name="EngineSounds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_lv11k")
-autoplay = true
 
 [node name="UpgradesHitbox" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradesHitbox"]
-shape = SubResource("CircleShape2D_2tl5e")
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_tbcpm")
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.1
@@ -169,7 +171,17 @@ rotation = 1.5708
 position = Vector2(5, 11.5)
 rotation = 1.5708
 
+[node name="MinimapUpdate" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="EngineStart" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="body_entered" from="CollectionHitbox" to="." method="_on_collection_hitbox_body_entered"]
 [connection signal="finished" from="EngineSounds" to="." method="_on_audio_stream_player_2d_finished"]
 [connection signal="body_entered" from="UpgradesHitbox" to="." method="_on_upgrades_hitbox_body_entered"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="MinimapUpdate" to="." method="_on_minimap_update_timeout"]
+[connection signal="timeout" from="EngineStart" to="." method="_on_engine_start_timeout"]
